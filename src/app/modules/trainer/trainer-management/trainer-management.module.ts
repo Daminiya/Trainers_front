@@ -13,6 +13,10 @@ import { AddTrainingHistoryComponent } from './training-history/add-training-his
 import { TrainingHistoryService } from 'src/app/services/training-history/training-history.service';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { AddAcademicQualificationComponent } from './profile/add-academic-qualification/add-academic-qualification.component';
+import { AddProfessionalQualificationComponent } from './profile/add-professional-qualification/add-professional-qualification.component';
+import { AcademicQualificationComponent } from './profile/academic-qualification/academic-qualification.component';
+import { ProfessionalQualificationComponent } from './profile/professional-qualification/professional-qualification.component';
 
 const routes: Routes = [
   {
@@ -36,7 +40,11 @@ const routes: Routes = [
     TrainingHistoryComponent,
     ViewTrainingHistoryComponent,
     AddTrainingHistoryComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddAcademicQualificationComponent,
+    AddProfessionalQualificationComponent,
+    AcademicQualificationComponent,
+    ProfessionalQualificationComponent
   ],
   providers: [TrainingHistoryService]
 })
