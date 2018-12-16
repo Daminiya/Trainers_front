@@ -12,6 +12,7 @@ import { ViewTrainingHistoryComponent } from './training-history/view-training-h
 import { AddTrainingHistoryComponent } from './training-history/add-training-history/add-training-history.component';
 import { TrainingHistoryService } from 'src/app/services/training-history/training-history.service';
 import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -34,7 +35,8 @@ const routes: Routes = [
     AvailabilityFormComponent,
     TrainingHistoryComponent,
     ViewTrainingHistoryComponent,
-    AddTrainingHistoryComponent
+    AddTrainingHistoryComponent,
+    ProfileComponent
   ],
   providers: [TrainingHistoryService]
 })
