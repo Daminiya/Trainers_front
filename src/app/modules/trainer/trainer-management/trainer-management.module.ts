@@ -12,6 +12,13 @@ import { ViewTrainingHistoryComponent } from './training-history/view-training-h
 import { AddTrainingHistoryComponent } from './training-history/add-training-history/add-training-history.component';
 import { TrainingHistoryService } from 'src/app/services/training-history/training-history.service';
 import { FormsModule } from '@angular/forms';
+import { GeneralInformationComponent } from './profile/general-information/general-information.component';
+import { TechnologySkillLevelComponent } from './profile/technology-skill-level/technology-skill-level.component';
+import { RecordOfEmploymentComponent } from './profile/record-of-employment/record-of-employment.component';
+import { AddTechnologySkillLevelComponent } from './profile/technology-skill-level/Modal/add-technology-skill-level/add-technology-skill-level.component';
+import { EditTechnologySkillLevelComponent } from './profile/technology-skill-level/Modal/edit-technology-skill-level/edit-technology-skill-level.component';
+import { AddRecordOfEmploymentComponent } from './profile/record-of-employment/Modal/add-record-of-employment/add-record-of-employment.component';
+import { EditRecordOfEmploymentComponent } from './profile/record-of-employment/Modal/edit-record-of-employment/edit-record-of-employment.component';
 
 const routes: Routes = [
   {
@@ -34,7 +41,14 @@ const routes: Routes = [
     AvailabilityFormComponent,
     TrainingHistoryComponent,
     ViewTrainingHistoryComponent,
-    AddTrainingHistoryComponent
+    AddTrainingHistoryComponent,
+    GeneralInformationComponent,
+    TechnologySkillLevelComponent,
+    RecordOfEmploymentComponent,
+    AddTechnologySkillLevelComponent,
+    EditTechnologySkillLevelComponent,
+    AddRecordOfEmploymentComponent,
+    EditRecordOfEmploymentComponent
   ],
   providers: [TrainingHistoryService]
 })
