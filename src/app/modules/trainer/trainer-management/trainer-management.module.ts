@@ -17,6 +17,10 @@ import { AddAcademicQualificationComponent } from './profile/add-academic-qualif
 import { AddProfessionalQualificationComponent } from './profile/add-professional-qualification/add-professional-qualification.component';
 import { AcademicQualificationComponent } from './profile/academic-qualification/academic-qualification.component';
 import { ProfessionalQualificationComponent } from './profile/professional-qualification/professional-qualification.component';
+import { ProfessionalMenberShipsComponent } from './profile/professional-menber-ships/professional-menber-ships.component';
+import { ViewProfileComponent } from './profile/view-profile/view-profile.component';
+import { FormProfessionalComponent } from './profile/form-professional/form-professional.component';
+import { FormUniversityComponent } from './profile/form-university/form-university.component';
 
 const routes: Routes = [
   {
@@ -44,7 +48,11 @@ const routes: Routes = [
     AddAcademicQualificationComponent,
     AddProfessionalQualificationComponent,
     AcademicQualificationComponent,
-    ProfessionalQualificationComponent
+    ProfessionalQualificationComponent,
+    ProfessionalMenberShipsComponent,
+    ViewProfileComponent,
+    FormProfessionalComponent,
+    FormUniversityComponent
   ],
   providers: [TrainingHistoryService]
 })

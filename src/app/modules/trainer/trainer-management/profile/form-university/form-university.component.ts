@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-professional-qualification',
-  templateUrl: './add-professional-qualification.component.html',
-  styleUrls: ['./add-professional-qualification.component.css']
+  selector: 'app-form-university',
+  templateUrl: './form-university.component.html',
+  styleUrls: ['./form-university.component.css']
 })
-export class AddProfessionalQualificationComponent implements OnInit {
+export class FormUniversityComponent implements OnInit {
 
   constructor() { }
 
