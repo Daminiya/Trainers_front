@@ -1,0 +1,88 @@
+<!-- editrainingHistory modal start -->
+<div id="editraining" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="card-title">Add History</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="col-md-12">
+          <!-- form start -->
+          <!-- card body start -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label ">Trainer Id:</label>
+                  <input type="text" class="form-control" id="trainerId" name="trainerId" readonly>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label ">Trainer Name:</label>
+                  <input type="text" class="form-control" id="trainerName" name="trainerName">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label ">Date:</label>
+                  <input type="date" class="form-control" id="date" name="date">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label ">Training Topic:</label>
+                  <input type="text" class="form-control" id="trainingTopic" name="trainingTopic">
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label ">Total Hours:</label>
+                  <input type="text" class="form-control" id="totalHours" name="totalHours">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card body end -->
+          <!-- form end -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+        <!-- <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#delete-modal">Cancel</button> -->
+      </div>
+    </div>
+    <!-- modal content end -->
+  </div>
+</div>
+<!-- editrainingHistory modal end -->
+
+<!-- Modal for Delete -->
+<div class="modal" id="DeleteTraining">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h6 class="modal-title">Confirmation</h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <P>Do you want to Delete?</P>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal for Delete Finished-->
