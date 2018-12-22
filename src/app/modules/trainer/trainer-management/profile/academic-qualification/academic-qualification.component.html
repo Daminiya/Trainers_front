@@ -11,13 +11,13 @@
           <th>Year Of Exam</th>
           <th>Exam Type</th>
         </tr>
-        <tr >
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>  
+        <tr *ngFor="let taca of academicQualifications">
+          <td>{{taca.periodYearFrom}}</td>
+          <td>{{taca.periodYearTo}}</td>
+          <td>{{taca.schoolName}}</td>
+          <td>{{taca.result}}</td>
+          <td>{{taca.examinationYear}}</td>
+          <td>{{taca.examType.examTypeName}}</td>  
           <td>
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAccadamic" data-dismiss="modal"
               (click)="getAcadamicId(aca)">Edit</button>
@@ -28,14 +28,14 @@
               data-dismiss="modal" (click)="getAcadamicId(aca)">Delete</button> -->
             	<div class="row">
 
-                <a href="" data-toggle="modal" data-target="#editAccadamic" > 
+                <a href="" data-toggle="modal" data-target="#editAccadamic" (click)="getAcadamicId(taca)" > 
                   <span>
                     <i class="large material-icons icon-edit">edit</i>
                   </span>
                 </a>
               
              
-                <a href="" data-toggle="modal" data-target="#daleteAccadamic" >
+                <a href="" data-toggle="modal" data-target="#daleteAccadamic" (click)=" getAcadamicId(taca)" >
                   <span class="">
                     <i  class="material-icons icon-delete">delete_forever</i>
                   </span>
@@ -71,7 +71,7 @@
       <div class="modal-footer">
         <div>
           <button type="button"  class="btn btn-danger " data-toggle="modal"
-            data-dismiss="modal">Yes</button>
+            data-dismiss="modal" (click)="deleteAcadamicQualification()">Yes</button>
         </div>
         <div>
           <button type="button" class="btn btn-success " data-toggle="modal" data-dismiss="modal">No</button>
@@ -97,17 +97,18 @@
 
               <!-- card body start -->
               <div class="row">
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Employee Name</label>
-                    <input type="text" class="form-control form-control-sm" name="school" disabled>
+                    <label for="exampleInputEmail1">Trainer Name</label>
+                    <input type="text" class="form-control form-control-sm" name="Trainer" id="Trainer" disabled [(ngModel)]="academicQualObj.user">
 
                   </div>
-                </div>
+                </div> -->
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name-school">Name of School</label>
-                    <input type="text" class="form-control form-control-sm" name="school" placeholder="Name of School" >
+                    <input type="text" class="form-control form-control-sm" name="school" id="school" placeholder="Name of School" 
+                    [(ngModel)]="academicQualObj.schoolName">
 
                   </div>
                 </div>
@@ -118,11 +119,13 @@
                     <label for="">Period Year</label>
                     <div class="row">
                       <div class="col-md-6">
-                        <input type="text" name="period" class="form-control form-control-sm" placeholder="From Year">
+                        <input type="text" name="periodfrom" id="periodfrom" class="form-control form-control-sm" placeholder="From Year"
+                        [(ngModel)]="academicQualObj.periodYearFrom">
 
                       </div>
                       <div class="col-md-6">
-                        <input type="text" name="to" class="form-control form-control-sm" placeholder="To Year" >
+                        <input type="text" name="to" id="to" class="form-control form-control-sm" placeholder="To Year" 
+                        [(ngModel)]="academicQualObj.periodYearTo">
 
                       </div>
                     </div>
@@ -132,8 +135,8 @@
                 <div class="col-md-6">
                   <div class="form-group result">
                     <label for="position">Result:</label>
-                    <select class="form-control" name="result" form class="form-control form-control-sm" placeholder="Result" name="result"
-                      >
+                    <select class="form-control" name="result" id="result" form class="form-control form-control-sm" placeholder="Result" name="result"
+                    [(ngModel)]="academicQualObj.result">
                       <option selected disabled value="">Select result</option>
                       <option value="Passed">Passed</option>
                       <option value="Failed">Failed</option>
@@ -146,8 +149,8 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="school-year-graduation">Year of Examination</label>
-                    <input type="text" name="exyear" class="form-control form-control-sm" placeholder="Year of Examination"
-                      >
+                    <input type="text" name="exyear" id="exyear" class="form-control form-control-sm" placeholder="Year of Examination"
+                    [(ngModel)]="academicQualObj.examinationYear">
 
                   </div>
                 </div>
@@ -161,11 +164,11 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="position">Exam Type:</label>
-                    <select class="form-control" name="examType" form class="form-control form-control-sm" >
+                    <select class="form-control" name="examType" id="examType" form class="form-control form-control-sm" [(ngModel)]="academicQualObj.examtype">
                       <option selected disabled value="">Select Exam Type</option>
-                      <option > bugvubhoh</option>
-                      <option > bugvubhoh</option>
-                      <option > bugvubhoh</option>
+                      <option *ngFor="let examtype of examtypes" value="{{examtype.id}}">
+                        {{examtype.examTypeName}}
+                      </option>
                     </select>
 
                   </div>
@@ -183,7 +186,7 @@
       </form>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" >Update</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editAcadamicQualification()" >Update</button>
 
       </div>
     </div>

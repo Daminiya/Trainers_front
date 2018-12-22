@@ -13,16 +13,9 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Trainer Name</label>
-                              <!-- <input name="funame" list="options" class=" form-control" [(ngModel)]="refObj.user">
-                                <datalist id="options">
-                                  <option selected disabled>Select a Employee Name</option>
-                                  <option *ngFor="let users of user" data-value="{{users.id}}">{{users.fullName}}</option>
-                                </datalist> -->
-                              <select formControlName="empName" class="form-control form-control-sm" [class.is-invalid]="addprofForm.get('empName').invalid && addprofForm.get('empName').touched "
-                                name="result" >
-                                <option selected disabled value="0">Select Trainer Name</option>
-                                <option >thtt</option>
-                              </select>
+                              <input formControlName="empName" class="form-control form-control-sm" [class.is-invalid]="addprofForm.get('empName').invalid && addprofForm.get('empName').touched "
+                              name="result" [(ngModel)]="trainermembershipObj.user">
+                              
                               <div *ngIf="addprofForm.get('empName').invalid && addprofForm.get('empName').touched ">
                                 <small class="text-danger" *ngIf="addprofForm.get('empName').errors?.required">Trainer Name is
                                   Required
@@ -33,7 +26,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="name-university">Organization Name</label>
-                              <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution"
+                              <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution " [(ngModel)]="trainermembershipObj.organizationName"
                                 name="university" formControlName="university" [class.is-invalid]="addprofForm.get('university').invalid && addprofForm.get('university').touched "
                                >
                               <div *ngIf="addprofForm.get('university').invalid && addprofForm.get('university').touched ">
@@ -55,7 +48,7 @@
                                 <div class="col-md-6">
                                   <input formControlName="fromyear" type="text" class="form-control form-control-sm"
                                     [class.is-invalid]="addprofForm.get('fromyear').invalid && addprofForm.get('fromyear').touched "
-                                    placeholder="From Year" >
+                                    placeholder="From Year" [(ngModel)]="trainermembershipObj.periodYearFrom">
                                   <div *ngIf="addprofForm.get('fromyear').invalid && addprofForm.get('fromyear').touched ">
                                     <small class="text-danger" *ngIf="addprofForm.get('fromyear').errors?.required">From year is
                                       Required
@@ -71,7 +64,7 @@
           
                                   <input formControlName="toyear" type="text" class="form-control form-control-sm"
                                     [class.is-invalid]="addprofForm.get('toyear').invalid && addprofForm.get('toyear').touched "
-                                    placeholder="To Year" >
+                                    placeholder="To Year" [(ngModel)]="trainermembershipObj.periodYearTo">
                                   <div *ngIf="addprofForm.get('toyear').invalid && addprofForm.get('toyear').touched ">
                                     <small class="text-danger" *ngIf="addprofForm.get('toyear').errors?.required">To year is
                                       Required
@@ -92,7 +85,7 @@
                               <label for="university-grading">Event Type</label>
                               <input type="text" class="form-control" id="university-grading" formControlName="eventtype"
                                 [class.is-invalid]="addprofForm.get('eventtype').invalid && addprofForm.get('eventtype').touched "
-                                placeholder="Event Type" name="eventtype" >
+                                placeholder="Event Type" name="eventtype" [(ngModel)]="trainermembershipObj.eventType">
                               <div *ngIf="addprofForm.get('eventtype').invalid && addprofForm.get('eventtype').touched ">
                                 <small class="text-danger" *ngIf="addprofForm.get('eventtype').errors?.required">Event Type is
                                   Required
@@ -111,7 +104,7 @@
                               <label for="university-grading">Event Name</label>
                               <input type="text" class="form-control" id="university-grading" formControlName="eventname"
                                 [class.is-invalid]="addprofForm.get('eventname').invalid && addprofForm.get('eventname').touched "
-                                placeholder="Event Name" name="eventname" >
+                                placeholder="Event Name" name="eventname" [(ngModel)]="trainermembershipObj.eventName" >
                               <div *ngIf="addprofForm.get('eventname').invalid && addprofForm.get('eventname').touched ">
                                 <small class="text-danger" *ngIf="addprofForm.get('eventname').errors?.required">Event Name is
                                   Required
@@ -126,7 +119,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="university-grading">Number of Award</label>
-                              <input type="text" class="form-control" id="university-grading" placeholder="Award" name="award"
+                              <input type="text" class="form-control" id="university-grading" placeholder="Award" name="award" [(ngModel)]="trainermembershipObj.award"
                                 formControlName="nameOfaward" [class.is-invalid]="addprofForm.get('nameOfaward').invalid && addprofForm.get('nameOfaward').touched "
                                 >
                               <div *ngIf="addprofForm.get('nameOfaward').invalid && addprofForm.get('nameOfaward').touched ">
@@ -147,7 +140,7 @@
           
                         <div class="col-md-12">
           
-                          <button type="button" class="btn btn-primary pull-right"  [disabled]="!addprofForm.valid">Save</button>
+                          <button type="button" class="btn btn-primary pull-right"  [disabled]="!addprofForm.valid" (click)="addProMembership()">Save</button>
                         </div>
                       </div>
                       <!-- card body end -->

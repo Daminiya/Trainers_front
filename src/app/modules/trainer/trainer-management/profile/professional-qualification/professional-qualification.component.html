@@ -25,14 +25,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr >
-          <td>ss</td>
-          <td>ss</td>
-          <td>ss</td>
-          <td>ss</td>
-          <td>ss</td>
-          <td>ss</td>
-          <td>ss</td>
+        <tr  *ngFor="let trainerprofessionals of professional" >
+          <td>{{trainerprofessionals.insituteName}}</td>
+          <td>{{trainerprofessionals.periodYearFrom}}</td>
+          <td>{{trainerprofessionals.periodYearTo}}</td>
+          <td>{{trainerprofessionals.courseName}}</td>
+          <td>{{trainerprofessionals.result}}</td>
+          <td>{{trainerprofessionals.examinationYear}}</td>
+          <td>{{trainerprofessionals.gpa}}</td>
           <td>
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editprof" data-dismiss="modal"
               (click)="getproQualificationId(professionals)">Edit</button>
@@ -44,14 +44,14 @@
 
               <div class="row">
 
-                <a href="" data-toggle="modal" data-target="#editprof" > 
+                <a href="" data-toggle="modal" data-target="#editprof" (click)=" getproQualificationId(trainerprofessionals)"> 
                   <span>
                     <i class="large material-icons icon-edit">edit</i>
                   </span>
                 </a>
               
              
-                <a href="" data-toggle="modal" data-target="#daleteprof" >
+                <a href="" data-toggle="modal" data-target="#daleteprof" (click)=" getproQualificationId(trainerprofessionals)" >
                   <span class="">
                     <i  class="material-icons icon-delete">delete_forever</i>
                   </span>
@@ -60,41 +60,7 @@
                 </div>
           </td>
         </tr>
-        <tr >
-          <td>ss</td>
-          <td>ss</td>
-          <td>ss</td>
-          <td>ss</td>
-          <td>ss</td>
-          <td>ss</td>
-          <td>ss</td>
-          <td>
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editprof" data-dismiss="modal"
-              (click)="getproQualificationId(professionals)">Edit</button>
-
-          </td>
-          <td>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#daleteprof" data-dismiss="modal"
-              (click)="getproQualificationId(professionals)">Delete</button> -->
-
-              <div class="row">
-
-                <a href="" data-toggle="modal" data-target="#editprof" > 
-                  <span>
-                    <i class="large material-icons icon-edit">edit</i>
-                  </span>
-                </a>
-              
-             
-                <a href="" data-toggle="modal" data-target="#daleteprof" >
-                  <span class="">
-                    <i  class="material-icons icon-delete">delete_forever</i>
-                  </span>
-                </a>
-
-                </div>
-          </td>
-        </tr>
+        
       </tbody>
     </table>
 
@@ -126,7 +92,7 @@
       </div>
       <div class="modal-footer">
         <div>
-          <button type="button"  class="btn btn-danger " data-toggle="modal"
+          <button type="button"  class="btn btn-danger " data-toggle="modal" (click)="deleteproQualification()"
             data-dismiss="modal">Yes</button>
         </div>
         <div>
@@ -155,7 +121,7 @@
                   <div class="form-group">
                     <label for="name-university">Name of University/Institution</label>
                     <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution"
-                      name="name" >
+                      name="name" [(ngModel)]="profesionalObj.insituteName" >
 
                   </div>
                 </div>
@@ -163,7 +129,7 @@
                     <div class="form-group">
                       <label for="university-grading">GPA</label>
                       <input type="text" class="form-control" id="university-grading" placeholder="Enter GPA" name="gpa"
-                       >
+                      [(ngModel)]="profesionalObj.gpa">
   
                     </div>
                   </div>
@@ -173,7 +139,7 @@
                   <div class="form-group">
                     <label for="name-university">Course Name</label>
                     <input type="text" class="form-control" id="primary-year-form" placeholder="Name of Course" name="courseName"
-                      >
+                    [(ngModel)]="profesionalObj.courseName" >
                   </div>
 
 
@@ -185,12 +151,12 @@
                     <div class="row">
                       <div class="col-md-6">
                         <input type="Year" class="form-control" id="university-from" placeholder="From" name="periodYearFrom"
-                          >
+                        [(ngModel)]="profesionalObj.periodYearFrom"  >
 
                       </div>
                       <div class="col-md-6">
                         <input type="text" class="form-control" id="university-to" placeholder="To" name="periodYearTo"
-                          >
+                        [(ngModel)]="profesionalObj.periodYearTo"  >
 
                       </div>
                     </div>
@@ -202,7 +168,7 @@
                   <div class="form-group">
                     <label for="university-subject">Course Type</label>
                     <input type="text" class="form-control" id="courseType" placeholder="Enter Course Type" name="courseType"
-                      >
+                    [(ngModel)]="profesionalObj.courseType"  >
 
                   </div>
                 </div>
@@ -211,7 +177,7 @@
                   <div class="form-group">
                     <label for="university-grading">Examination Year</label>
                     <input type="text" class="form-control" id="examinationYear" placeholder="Examination Year" name="examinationYear"
-                     >
+                    [(ngModel)]="profesionalObj.examinationYear">
 
                   </div>
                 </div>
@@ -220,8 +186,8 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="university-subject">Subject Examinations Passed</label>
-                    <input type="text" class="form-control" id="university-subject" placeholder="Enter Subject Examinations Passed"
-                      >
+                    <input type="text" class="form-control" name="result" id="result" placeholder="Enter Subject Examinations Passed"
+                    [(ngModel)]="profesionalObj.result">
 
                   </div>
                 </div>
@@ -237,7 +203,7 @@
       </form>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" >Update</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editproQualification()">Update</button>
 
       </div>
     </div>

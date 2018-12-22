@@ -18,50 +18,14 @@
                 <!-- card body start -->
                 <legend>Professional Qualification</legend>
   
-                <!-- <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="name-school">Name of School</label>
-                          <input type="text" class="form-control" id="primary-year-form" placeholder="Name of School">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="">Period Year</label>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <input type="text" class="form-control" id="school-from" placeholder="From">
-                            </div>
-                            <div class="col-md-6">
-                              <input type="text" class="form-control" id="school-to" placeholder="To">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-  
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="school-subject">Subject Examinations Passed</label>
-                          <input type="text" class="form-control" id="subject" placeholder="Enter Subject Examinations Passed">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="university-grading">Subject offered & Grading</label>
-                          <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading">
-                        </div>
-                      </div> -->
-  
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Trainer Name</label>
+                     <input type="text class="class="form-control form-control-md" formControlName="fullName"
+                     [class.is-invalid]="addUserForm.get('fullName').invalid && addUserForm.get('fullName').touched "
+                     name="fullname" [(ngModel)]="trainerprofesionalObj.user">
                      
-                      <select _ngcontent-c5="" class="form-control form-control-md" formControlName="fullName"
-                        [class.is-invalid]="addUserForm.get('fullName').invalid && addUserForm.get('fullName').touched "
-                        name="fullname" >
-                        <option selected disabled value="0">Select Trainer Name</option>
-                        <option >kbbkb</option>
-                      </select>
                       <div *ngIf="addUserForm.get('fullName').invalid && addUserForm.get('fullName').touched ">
                         <small class="text-danger" *ngIf="addUserForm.get('fullName').errors?.required">Full Name is
                           Required </small>
@@ -73,8 +37,9 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="name-university">Name of University/Institution</label>
-                      <input type="text" class="form-control" formControlName="universityName" [class.is-invalid]="addUserForm.get('universityName').invalid && addUserForm.get('universityName').touched "
-                        id="primary-year-form" placeholder="Name of University/Institution" name="name" >
+                      <input type="text" class="form-control" formControlName="universityName"
+                       [class.is-invalid]="addUserForm.get('universityName').invalid && addUserForm.get('universityName').touched "
+                        id="primary-year-form" placeholder="Name of University/Institution" name="name"  [(ngModel)]="trainerprofesionalObj.insituteName">
                       <div *ngIf="addUserForm.get('universityName').invalid && addUserForm.get('universityName').touched ">
                         <small class="text-danger" *ngIf="addUserForm.get('universityName').errors?.required">University
                           Name is Required </small>
@@ -94,7 +59,7 @@
                       <label for="name-university">Course Name</label>
                       <input type="text" class="form-control" formControlName="courseName" id="primary-year-form" 
                       [class.is-invalid]="addUserForm.get('courseName').invalid && addUserForm.get('courseName').touched "
-                        placeholder="Name of Course" name="courseName" >
+                        placeholder="Name of Course" name="courseName"  [(ngModel)]="trainerprofesionalObj.courseName" >
                     </div>
                     <div *ngIf="addUserForm.get('courseName').invalid && addUserForm.get('courseName').touched ">
                       <small class="text-danger" *ngIf="addUserForm.get('courseName').errors?.required">Course Name is
@@ -111,7 +76,8 @@
                       <label for="univesity-period">Period Year</label>
                       <div class="row">
                         <div class="col-md-6">
-                          <input type="Year" class="form-control" id="university-from" placeholder="From" name="periodYearFrom"
+                          <input type="Year" class="form-control" id="university-from" placeholder="From" name="periodYearFrom"  
+                          [(ngModel)]="trainerprofesionalObj.periodYearFrom"
                             formControlName="from" [class.is-invalid]="addUserForm.get('from').invalid && addUserForm.get('from').touched " >
                           <div *ngIf="addUserForm.get('from').invalid && addUserForm.get('from').touched ">
                             <small class="text-danger" *ngIf="addUserForm.get('from').errors?.required">Year-From is
@@ -128,7 +94,8 @@
                           </div>
                         </div>
                         <div class="col-md-6">
-                          <input type="text" class="form-control" id="university-to" formControlName="to" placeholder="To"
+                          <input type="text" class="form-control" id="university-to" formControlName="to" placeholder="To" 
+                           [(ngModel)]="trainerprofesionalObj.periodYearTo"
                             name="periodYearTo" [class.is-invalid]="addUserForm.get('to').invalid && addUserForm.get('to').touched ">
                           <div *ngIf="addUserForm.get('to').invalid && addUserForm.get('to').touched ">
                             <small class="text-danger" *ngIf="addUserForm.get('to').errors?.required">Year-To is
@@ -152,7 +119,8 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="university-subject">Course Type</label>
-                      <input type="text" class="form-control" id="courseType" formControlName="courseType" placeholder="Enter Course Type"
+                      <input type="text" class="form-control" id="courseType" formControlName="courseType" placeholder="Enter Course Type" 
+                       [(ngModel)]="trainerprofesionalObj.courseType"
                         name="courseType" [class.is-invalid]="addUserForm.get('courseType').invalid && addUserForm.get('courseType').touched " >
                       <div *ngIf="addUserForm.get('courseType').invalid && addUserForm.get('courseType').touched ">
                         <small class="text-danger" *ngIf="addUserForm.get('courseType').errors?.required">Course Type is
@@ -168,7 +136,7 @@
                     <div class="form-group">
                       <label for="university-grading">Examination Year</label>
                       <input type="text" class="form-control" formControlName="examinationYear" id="examinationYear"
-                        placeholder="Examination Year" name="examinationYear" 
+                        placeholder="Examination Year" name="examinationYear"  [(ngModel)]="trainerprofesionalObj.examinationYear"
                         [class.is-invalid]="addUserForm.get('examinationYear').invalid && addUserForm.get('examinationYear').touched ">
                       <div *ngIf="addUserForm.get('examinationYear').invalid && addUserForm.get('examinationYear').touched ">
                         <small class="text-danger" *ngIf="addUserForm.get('examinationYear').errors?.required">Examination
@@ -194,7 +162,7 @@
                     <div class="form-group">
                       <label for="university-subject">Subject Examinations Passed</label>
                       <input type="text" class="form-control" formControlName="subject" id="university-subject"
-                        placeholder="Enter Subject Examinations Passed" name="result" 
+                        placeholder="Enter Subject Examinations Passed" name="result"   [(ngModel)]="trainerprofesionalObj.result"
                         [class.is-invalid]="addUserForm.get('subject').invalid && addUserForm.get('subject').touched ">
                       <div *ngIf="addUserForm.get('subject').invalid && addUserForm.get('subject').touched ">
                         <small class="text-danger" *ngIf="addUserForm.get('subject').errors?.required">Subject is
@@ -210,7 +178,8 @@
                     <div class="form-group">
                       <label for="university-grading">GPA</label>
                       <input type="text" class="form-control" id="university-grading" formControlName="gpa" placeholder="Enter GPA"
-                        name="gpa" [class.is-invalid]="addUserForm.get('gpa').invalid && addUserForm.get('gpa').touched " >
+                        name="gpa"  [(ngModel)]="trainerprofesionalObj.gpa"
+                        [class.is-invalid]="addUserForm.get('gpa').invalid && addUserForm.get('gpa').touched " >
                       <div *ngIf="addUserForm.get('gpa').invalid && addUserForm.get('gpa').touched ">
                         <small class="text-danger" *ngIf="addUserForm.get('gpa').errors?.required">GPA is
                           Required </small>
@@ -229,7 +198,7 @@
                   <div class="col-md-12">
   
                     <button type="button" class="btn btn-primary pull-right" 
-                      [disabled]="!addUserForm.valid">Save</button>
+                      [disabled]="!addUserForm.valid" (click)="addEmpProQualification()">Save</button>
                   </div>
                 </div>
                 <!-- card body end -->
