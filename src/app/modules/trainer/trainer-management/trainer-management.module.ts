@@ -21,6 +21,18 @@ import { ProfessionalMenberShipsComponent } from './profile/professional-menber-
 import { ViewProfileComponent } from './profile/view-profile/view-profile.component';
 import { FormProfessionalComponent } from './profile/form-professional/form-professional.component';
 import { FormUniversityComponent } from './profile/form-university/form-university.component';
+import { SuggestionAndFeedbackComponent } from './suggestion-and-feedback/suggestion-and-feedback.component';
+import { GeneralInformationComponent } from './profile/general-information/general-information.component';
+import { TechnologySkillLevelComponent } from './profile/technology-skill-level/technology-skill-level.component';
+import { RecordOfEmploymentComponent } from './profile/record-of-employment/record-of-employment.component';
+import { AddSuggestionComponent } from './suggestion-and-feedback/Modal/add-suggestion/add-suggestion.component';
+import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/Modal/view-own-suggestion/view-own-suggestion.component';
+import { ViewSuggestionComponent } from './suggestion-and-feedback/Modal/view-suggestion/view-suggestion.component';
+import { AddRecordOfEmploymentComponent } from './profile/record-of-employment/add-record-of-employment/add-record-of-employment.component';
+import { EditRecordOfEmploymentComponent } from './profile/record-of-employment/edit-record-of-employment/edit-record-of-employment.component';
+import { AddTechnologySkillLevelComponent } from './profile/technology-skill-level/add-technology-skill-level/add-technology-skill-level.component';
+import { EditTechnologySkillLevelComponent } from './profile/technology-skill-level/edit-technology-skill-level/edit-technology-skill-level.component';
+import { SuggestionService } from '../Service/suggestion.service';
 
 const routes: Routes = [
   {
@@ -30,6 +42,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'suggestion',
+    component: SuggestionAndFeedbackComponent
   }
 ];
 @NgModule({
@@ -56,8 +72,19 @@ const routes: Routes = [
     ProfessionalMenberShipsComponent,
     ViewProfileComponent,
     FormProfessionalComponent,
-    FormUniversityComponent
+    FormUniversityComponent,
+    SuggestionAndFeedbackComponent,
+    GeneralInformationComponent,
+    TechnologySkillLevelComponent,
+    RecordOfEmploymentComponent,
+    AddSuggestionComponent,
+    ViewOwnSuggestionComponent,
+    ViewSuggestionComponent,
+    AddRecordOfEmploymentComponent,
+    EditRecordOfEmploymentComponent,
+    AddTechnologySkillLevelComponent,
+    EditTechnologySkillLevelComponent
   ],
-  providers: [TrainingHistoryService]
+  providers: [TrainingHistoryService,SuggestionService]
 })
 export class TrainerManagementModule { }
