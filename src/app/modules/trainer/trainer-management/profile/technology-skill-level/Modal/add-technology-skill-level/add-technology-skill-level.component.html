@@ -20,7 +20,7 @@
                 <div class="form-group">
                   <label for="technology">ID</label>
                   <input type="text" class="form-control" id="id" name="id" placeholder="Technology & Skill Id"
-                    disabled>
+                    disabled [(ngModel)]="technologySkillObj.id">
                 </div>
               </div>
 
@@ -28,7 +28,8 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="technology"> Technology </label>
-                  <input type="text" class="form-control" id="technology" name="technology" placeholder="Enter the Technology">
+                  <input type="text" class="form-control" id="technology" name="technology" placeholder="Enter the Technology"
+                  [(ngModel)]="technologySkillObj.technology">
                 </div>
               </div>
             </div>
@@ -37,7 +38,8 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="skill"> Skill Type</label>
-                  <input type="text" class="form-control" id="skill" name="skill" placeholder="Enter the Skill type">
+                  <input type="text" class="form-control" id="skill" name="skill" placeholder="Enter the Skill type"
+                  [(ngModel)]="technologySkillObj.skill">
                 </div>
               </div>
 
@@ -45,7 +47,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                     <label for="skill"> Skill Type</label>
-                  <select class="form-control" id="level" name="level">
+                  <select class="form-control" id="level" name="level" [(ngModel)]="technologySkillObj.level">
                     <option selected default hidden="default">select the Level</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -62,7 +64,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal"> Add </button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createTechnologySkillLevel()"> Add </button>
       </div>
     </div>
   </div>

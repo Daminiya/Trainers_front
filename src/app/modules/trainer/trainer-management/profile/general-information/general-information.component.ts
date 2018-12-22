@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralInformation } from '../../../Model/general-information';
+import { Router } from '@angular/router';
+import { GeneralInformationService } from '../../../Service/general-information.service';
 
 @Component({
   selector: 'app-general-information',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralInformationComponent implements OnInit {
 
-  constructor() { }
+  generalInfoObj: GeneralInformation = new GeneralInformation();
+  constructor(private router: Router,
+    private generalInfo: GeneralInformationService) { }
 
   ngOnInit() {
   }
-
-}
+  createGeneralInformation() {
+       this.generalInfo.createGeneralInformation(this.generalInfoObj).subscribe(data => {
+        console.log(data);
+        
+    //     // alert("added")
+    //     this.next();
+    //     this.responseMsg = "success";
+    //     this.responseMsgTimeOut();
+  
+  
+     });
+    //   this.responseMsg = "fail";
+    //   this.responseMsgTimeOut();
+    // }
+  
+    // next() {
+    //   this.router.navigate(['/appointment/appointmentInformation/academicInfo']);
+    
+  
+  }
+  }
