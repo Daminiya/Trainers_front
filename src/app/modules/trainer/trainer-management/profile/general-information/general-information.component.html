@@ -1,3 +1,200 @@
-<p>
-  general-information works!
-</p>
+<!-- 1st Form Start -->
+<div class="card">
+
+  <!-- card header start -->
+  <div class="card-header">
+    <h5 class="card-title">General Information</h5>
+
+    <div class="card-tools">
+      <!-- <button type="button" class="btn btn-tool" data-widget="collapse">
+              <i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-widget="remove">
+              <i class="fa fa-times"></i>
+            </button> -->
+    </div>
+  </div>
+  <!-- card-header end -->
+
+  <!-- card body start -->
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <div class="alert alert-success notification" id="alert-success" *ngIf="responseMsg === 'success'">
+              <span class="bold-font">Success:</span> All records were processed correctly! Ignore click Next
+            </div>
+            <div class="alert alert-danger notification" id="alert-danger" *ngIf="responseMsg === 'fail'">
+              <span class="bold-font">Error:</span> Something went wrong.
+            </div> -->
+        <div class="card card-primary">
+
+          <!-- form start -->
+          <form>
+
+            <!-- card body start -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="id">Trainer ID</label>
+                    <input type="text" class="form-control" name="id" id="id" placeholder="Enter the Trainer ID"
+                      [(ngModel)]="generalInfoObj.id">
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="inputtrainerName"> Trainer Name</label>
+                  <input type="text" id="name" name="name " placeholder="Enter Employee name" class="form-control"
+                    [(ngModel)]="generalInfoObj.fullName">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">Email </label>
+                    <!-- <input type="text" class="form-control" id="email" placeholder="Enter your Email"name="email"  [(ngModel)]="proObj.email"> -->
+                    <input type="text" id="email" name="email" placeholder="Email (abc123@email.com)" class="form-control"
+                      [(ngModel)]="generalInfoObj.id">
+                  </div>
+                </div>
+
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nic">Nationality</label>
+                    <input type="text" class="form-control" id="nic" placeholder="Enter Your Nationality" name="nic"
+                      [(ngModel)]="generalInfoObj.nationality">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nic">NIC</label>
+                    <input type="text" class="form-control" id="nic" placeholder="Enter your NIC Number" name="nat"
+                      [(ngModel)]="generalInfoObj.nic">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="religion">Religion</label>
+                    <input type="text" class="form-control" id="religion" name="religion" placeholder="Enter your Religion"
+                      name="religion" [(ngModel)]="generalInfoObj.religion">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="gender">Gender</label><br><br>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <input type="radio" name="gender" value="Male" [(ngModel)]="generalInfoObj.gender">
+                        Male
+                      </div>
+                      <div class="col-sm-3">
+                        <input type="radio" name="gender" value="Female" [(ngModel)]="generalInfoObj.gender">
+                        Female
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="dateofbirth"> Date of Birth</label>
+                    <input type="date" class="form-control" id="date-of-birth" placeholder="dd/mm/yyyy" name="dob"
+                      [(ngModel)]="generalInfoObj.dateOfBirth">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="permanentaddress">Permanent Address</label>
+                    <textarea class="form-control" name="addressP" id="address" placeholder="Enter your Permanent Address"
+                      [(ngModel)]="generalInfoObj.permenentAddress"></textarea>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="residential-address">Residential Address</label>
+                    <textarea class="form-control" name="addressR" placeholder="Enter your Residential Address"
+                      [(ngModel)]="generalInfoObj.residentialAddress"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" class="form-control" id="mobile" placeholder="Enter your Mobile Number" name="mobile"
+                      [(ngModel)]="generalInfoObj.mobileNumber">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="residential-number">Telephone Number</label>
+                    <input type="text" class="form-control" id="residential-number" placeholder="Enter your Residential Mobile Number"
+                      name="telephone" [(ngModel)]="generalInfoObj.telephoneNumber">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="marital-status">Marital Status</label>
+                    <input type="text" class="form-control" id="marital-status" placeholder="Enter your Marital Status"
+                      name="marital-status" [(ngModel)]="generalInfoObj.maritalStatus">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="position"> Position </label>
+                    <input type="text" class="form-control" id="position" placeholder="Enter your Position" name="position"
+                      [(ngModel)]="generalInfoObj.position">
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="spArea">Specialized Area</label>
+                  <input type="text" class="form-control" id="spArea" placeholder="Enter your Specialized Area" name="spArea"
+                    [(ngModel)]="generalInfoObj.specializedArea">
+                </div>
+              </div>
+
+            </div>
+
+            <!-- card body end -->
+
+            <div class="card-footer">
+              <button type="button" class="btn btn-primary" (click)="createGeneralInformation()">Save</button>
+
+              <!-- <button type="button" id="nextBtn" class="btn btn-primary" (click)="addProfileGeneralInfo()" [disabled]="!addUserForm.valid">Next</button>
+              &nbsp; -->
+              <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
+            </div>
+          </form>
+          <!-- form end -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- card body end -->
+
+<!-- 1st Form End -->
