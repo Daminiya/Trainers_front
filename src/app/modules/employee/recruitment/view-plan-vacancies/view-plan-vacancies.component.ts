@@ -57,7 +57,7 @@ export class ViewPlanVacanciesComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
+
   getAllPlanVacancyList() {
     this.planVacancyService.getAllPlanVacancy().subscribe(data => {
       this.plan = data;
@@ -113,6 +113,6 @@ export class ViewPlanVacanciesComponent implements OnInit {
     });
   }
 
- 
+
 
 }

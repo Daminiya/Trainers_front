@@ -12,11 +12,17 @@ import { ViewTrainingHistoryComponent } from './training-history/view-training-h
 import { AddTrainingHistoryComponent } from './training-history/add-training-history/add-training-history.component';
 import { TrainingHistoryService } from 'src/app/services/training-history/training-history.service';
 import { FormsModule } from '@angular/forms';
+import { AddPaymentHistoryComponent } from './payment-history/add-payment-history/add-payment-history.component';
+import { ViewPaymentHistoryComponent } from './payment-history/view-payment-history/view-payment-history.component';
 
 const routes: Routes = [
   {
     path: 'training-history',
-    component: TrainerManagementComponent
+    component: TrainingHistoryComponent
+  },
+  {
+    path: 'payment-history',
+    component: PaymentHistoryComponent
   }
 ];
 @NgModule({
@@ -34,7 +40,9 @@ const routes: Routes = [
     AvailabilityFormComponent,
     TrainingHistoryComponent,
     ViewTrainingHistoryComponent,
-    AddTrainingHistoryComponent
+    AddTrainingHistoryComponent,
+    AddPaymentHistoryComponent,
+    ViewPaymentHistoryComponent
   ],
   providers: [TrainingHistoryService]
 })
