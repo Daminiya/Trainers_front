@@ -25,7 +25,11 @@ import { FormUniversityComponent } from './profile/form-university/form-universi
 const routes: Routes = [
   {
     path: 'training-history',
-    component: TrainerManagementComponent
+    component: TrainingHistoryComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   }
 ];
 @NgModule({
