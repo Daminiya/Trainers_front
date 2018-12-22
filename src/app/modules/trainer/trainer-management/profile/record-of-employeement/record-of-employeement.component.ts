@@ -7,10 +7,10 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./record-of-employeement.component.css']
 })
 export class RecordOfEmployeementComponent implements OnInit {
-  displayedColumns: string[] = ['from','to','period','workPlaceName','workPlaceAddres','designation','typeOfWork','edit/delete'];
+  displayedColumns: string[] = ['id','from','to','period','workPlaceName','workPlaceAddres','designation','typeOfWork','edit/delete'];
 
   recordOfEmployment = [
-    {'from':'25.10.2016','to':'25.10.2018','period':'02 years','workPlaceName':'SGIC','workPlaceAddres':'Jaffna','designation':'HR','typeOfWork':'Office','edit/delete':''},
+    {'id':'1','from':'25.10.2016','to':'25.10.2018','period':'02 years','workPlaceName':'SGIC','workPlaceAddres':'Jaffna','designation':'HR','typeOfWork':'Office','edit/delete':''},
     
   ]
   dataSource = new MatTableDataSource<any>(this.recordOfEmployment);

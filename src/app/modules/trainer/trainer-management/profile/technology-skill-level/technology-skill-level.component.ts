@@ -8,11 +8,11 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class TechnologySkillLevelComponent implements OnInit {
 
-  displayedColumns: string[] = ['technology','skill','level','edit/delete'];
+  displayedColumns: string[] = ['id', 'technology', 'skill', 'level', 'edit/delete'];
 
   technologySkill = [
-    {'technology':'Core Technology','skill':'core Java','level':'3','edit/delete':''},
-    
+    { 'id': '1', 'technology': 'Core Technology', 'skill': 'core Java', 'level': '3', 'edit/delete': '' },
+
   ]
   dataSource = new MatTableDataSource<any>(this.technologySkill);
 

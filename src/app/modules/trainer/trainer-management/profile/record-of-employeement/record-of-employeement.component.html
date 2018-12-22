@@ -32,6 +32,13 @@
         <div class="mat-elevation-z8">
           <mat-table [dataSource]="dataSource" matSort>
 
+            <!-- column 0 start -->
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> ID</mat-header-cell>
+                <mat-cell *matCellDef="let recordOfEmployment "> {{recordOfEmployment.id}}</mat-cell>
+              </ng-container>
+              <!-- column 0 end -->
+
             <!-- column 1 start -->
             <ng-container matColumnDef="from">
               <mat-header-cell *matHeaderCellDef mat-sort-header> From</mat-header-cell>

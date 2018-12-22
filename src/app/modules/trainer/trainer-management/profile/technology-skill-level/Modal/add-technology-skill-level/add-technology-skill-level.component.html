@@ -15,13 +15,25 @@
 
             <!-- card body start -->
             <div class="row">
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="technology">ID</label>
+                  <input type="text" class="form-control" id="id" name="id" placeholder="Technology & Skill Id"
+                    disabled>
+                </div>
+              </div>
+
+
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="technology"> Technology </label>
                   <input type="text" class="form-control" id="technology" name="technology" placeholder="Enter the Technology">
                 </div>
               </div>
+            </div>
 
+            <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="skill"> Skill Type</label>
@@ -31,17 +43,20 @@
 
 
               <div class="col-md-6">
-                <select class="form-control" id="level" name="level">
-                <option selected default hidden = "default">select the Level</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
+                <div class="form-group">
+                    <label for="skill"> Skill Type</label>
+                  <select class="form-control" id="level" name="level">
+                    <option selected default hidden="default">select the Level</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
               </div>
-              
             </div>
+
           </form>
           <!-- form end -->
         </div>
