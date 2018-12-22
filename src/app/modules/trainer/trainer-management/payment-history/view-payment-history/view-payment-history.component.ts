@@ -20,7 +20,7 @@ export class ViewPaymentHistoryComponent implements OnInit {
   msg: any;
 
   //payments: any;
-  displayedColumns: string[] = ['trainerName', 'date', 'amount', 'paymentStatus', 'button'];
+  displayedColumns: string[] = ['trainerName', 'date', 'amount', 'paymentStatus', 'button', 'payment'];
 
 
 

@@ -53,9 +53,19 @@
               <mat-cell *matCellDef="let payments"> <button class="btn btn-primary" data-toggle="modal" data-target="#edit-view-payment-history"
                   (click)="editPayment(payments)">Edit</button>
                 &nbsp; &nbsp; <button class="btn btn-danger" data-toggle="modal" data-target="#delete-view-payment-history"
-                  (click)="editPayment(payments)">Delete</button></mat-cell>
+                  (click)="editPayment(payments)">Delete</button> &nbsp; &nbsp; </mat-cell>
             </ng-container>
             <!-- column 5 end -->
+
+            <!-- column 6 start -->
+            <ng-container matColumnDef="payment">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+              <mat-cell *matCellDef="let payments">
+                <button type="button " class="btn btn-primary " data-toggle="modal" data-target="#view-payment-history">View
+                  Payment</button>
+              </mat-cell>
+            </ng-container>
+            <!-- column 6 end -->
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
@@ -109,7 +119,7 @@
               <div class="card card-primary">
                 <!-- form start -->
                 <form #paymentForm="ngForm">
-              
+
                   <div class="card-body">
                     <div class="row">
                       <div class="col-lg-6">
@@ -119,7 +129,7 @@
                             <option default hidden selected>--Name of the Trainer--</option>
                             <option></option>
                             <option *ngFor="let users of user" value="{{users.id}}">{{users.fullName}}</option>
-                     
+
                             <!-- <option *ngFor="let u of user" value="{{u.id}}">{{u.fullName}}</option> -->
                           </select>
                         </div>
@@ -139,9 +149,9 @@
                           <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="paymentObj.amountPaid">
                         </div>
                       </div>
-                     
-                        <div class="col-md-6">
-                            <div class="form-group">
+
+                      <div class="col-md-6">
+                        <div class="form-group">
                           <label for="status">Payment Status</label>
                           <select class="form-control" name="status" id="status" [(ngModel)]="paymentObj.paymentStatus">
                             <option default hidden selected>--Payment Status--</option>
@@ -167,3 +177,37 @@
   </div>
 </div>
 <!-- EditModal Close -->
+
+<!-- View Payment Modal -->
+<div class="modal fade" id="view-payment-history" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">View Payment</h5>
+      </div>
+      <!-- Modal Body -->
+      <table class="table">
+        <tr>
+          <th>Invoice No</th>&nbsp;
+          <th>Date</th>&nbsp;
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>INV 002<td>
+          <td>2018-12-20<td>
+          <td>2,000<td>
+        </tr>
+        <tr>
+          <td>INV 003<td>
+          <td>2018-12-20<td>
+          <td>5,000<td>
+        </tr>
+      </table>
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- View Payment Modal Close -->
