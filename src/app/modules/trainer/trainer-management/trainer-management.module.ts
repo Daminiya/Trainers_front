@@ -3,13 +3,9 @@ import { CommonModule } from '@angular/common';
 import { TrainerManagementComponent } from './trainer-management.component';
 import { PaymentHistoryComponent } from './payment-history/payment-history.component';
 import { AvailabilityComponent } from './availability/availability.component';
-import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { AvailabilityFormComponent } from './availability-form/availability-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
-import { TrainingHistoryComponent } from './training-history/training-history.component';
-import { ViewTrainingHistoryComponent } from './training-history/view-training-history/view-training-history.component';
-import { AddTrainingHistoryComponent } from './training-history/add-training-history/add-training-history.component';
 import { TrainingHistoryService } from 'src/app/services/training-history/training-history.service';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
@@ -23,15 +19,39 @@ import { FormProfessionalComponent } from './profile/form-professional/form-prof
 import { FormUniversityComponent } from './profile/form-university/form-university.component';
 import { EditModalComponent } from './profile/academic-qualification/Modal/edit-modal/edit-modal.component';
 import { DeleteModalComponent } from './profile/academic-qualification/Modal/delete-modal/delete-modal.component';
+import { SuggestionAndFeedbackComponent } from './suggestion-and-feedback/suggestion-and-feedback.component';
+import { GeneralInformationComponent } from './profile/general-information/general-information.component';
+import { TechnologySkillLevelComponent } from './profile/technology-skill-level/technology-skill-level.component';
+import { RecordOfEmploymentComponent } from './profile/record-of-employment/record-of-employment.component';
+import { AddSuggestionComponent } from './suggestion-and-feedback/Modal/add-suggestion/add-suggestion.component';
+import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/Modal/view-own-suggestion/view-own-suggestion.component';
+import { ViewSuggestionComponent } from './suggestion-and-feedback/Modal/view-suggestion/view-suggestion.component';
+import { AddRecordOfEmploymentComponent } from './profile/record-of-employment/add-record-of-employment/add-record-of-employment.component';
+import { EditRecordOfEmploymentComponent } from './profile/record-of-employment/edit-record-of-employment/edit-record-of-employment.component';
+import { AddTechnologySkillLevelComponent } from './profile/technology-skill-level/add-technology-skill-level/add-technology-skill-level.component';
+import { EditTechnologySkillLevelComponent } from './profile/technology-skill-level/edit-technology-skill-level/edit-technology-skill-level.component';
+import { SuggestionService } from '../Service/suggestion.service';
+import { TrainingHistoryComponent } from './training-history/training-history.component';
+import { AddPaymentHistoryComponent } from './payment-history/add-payment-history/add-payment-history.component';
+import { ViewPaymentHistoryComponent } from './payment-history/view-payment-history/view-payment-history.component';
 
 const routes: Routes = [
+
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'suggestion',
+    component: SuggestionAndFeedbackComponent
+  },
   {
     path: 'training-history',
     component: TrainingHistoryComponent
   },
   {
-    path: 'profile',
-    component: ProfileComponent
+    path: 'payment-history',
+    component: PaymentHistoryComponent
   }
 ];
 @NgModule({
@@ -45,11 +65,8 @@ const routes: Routes = [
     TrainerManagementComponent,
     PaymentHistoryComponent,
     AvailabilityComponent,
-    PaymentFormComponent,
     AvailabilityFormComponent,
-    TrainingHistoryComponent,
-    ViewTrainingHistoryComponent,
-    AddTrainingHistoryComponent,
+
     ProfileComponent,
     AddAcademicQualificationComponent,
     AddProfessionalQualificationComponent,
@@ -60,8 +77,22 @@ const routes: Routes = [
     FormProfessionalComponent,
     FormUniversityComponent,
     EditModalComponent,
-    DeleteModalComponent
+    DeleteModalComponent,
+    SuggestionAndFeedbackComponent,
+    GeneralInformationComponent,
+    TechnologySkillLevelComponent,
+    RecordOfEmploymentComponent,
+    AddSuggestionComponent,
+    ViewOwnSuggestionComponent,
+    ViewSuggestionComponent,
+    AddRecordOfEmploymentComponent,
+    EditRecordOfEmploymentComponent,
+    AddTechnologySkillLevelComponent,
+    EditTechnologySkillLevelComponent,
+    TrainingHistoryComponent,
+    AddPaymentHistoryComponent,
+    ViewPaymentHistoryComponent
   ],
-  providers: [TrainingHistoryService]
+  providers: [TrainingHistoryService, SuggestionService]
 })
 export class TrainerManagementModule { }
