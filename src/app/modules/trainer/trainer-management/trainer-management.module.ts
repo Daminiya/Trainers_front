@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TrainerManagementComponent } from './trainer-management.component';
 import { PaymentHistoryComponent } from './payment-history/payment-history.component';
 import { AvailabilityComponent } from './availability/availability.component';
-import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { AvailabilityFormComponent } from './availability-form/availability-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
@@ -33,6 +32,8 @@ import { EditRecordOfEmploymentComponent } from './profile/record-of-employment/
 import { AddTechnologySkillLevelComponent } from './profile/technology-skill-level/add-technology-skill-level/add-technology-skill-level.component';
 import { EditTechnologySkillLevelComponent } from './profile/technology-skill-level/edit-technology-skill-level/edit-technology-skill-level.component';
 import { SuggestionService } from '../Service/suggestion.service';
+import { AddPaymentHistoryComponent } from './payment-history/add-payment-history/add-payment-history.component';
+import { ViewPaymentHistoryComponent } from './payment-history/view-payment-history/view-payment-history.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'suggestion',
     component: SuggestionAndFeedbackComponent
+  },
+  {
+    path: 'payment-history',
+    component: PaymentHistoryComponent
   }
 ];
 @NgModule({
@@ -59,7 +64,6 @@ const routes: Routes = [
     TrainerManagementComponent,
     PaymentHistoryComponent,
     AvailabilityComponent,
-    PaymentFormComponent,
     AvailabilityFormComponent,
     TrainingHistoryComponent,
     ViewTrainingHistoryComponent,
@@ -83,7 +87,9 @@ const routes: Routes = [
     AddRecordOfEmploymentComponent,
     EditRecordOfEmploymentComponent,
     AddTechnologySkillLevelComponent,
-    EditTechnologySkillLevelComponent
+    EditTechnologySkillLevelComponent,
+    AddPaymentHistoryComponent,
+    ViewPaymentHistoryComponent
   ],
   providers: [TrainingHistoryService,SuggestionService]
 })
