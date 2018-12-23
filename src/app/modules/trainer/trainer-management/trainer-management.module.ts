@@ -21,6 +21,8 @@ import { ProfessionalMenberShipsComponent } from './profile/professional-menber-
 import { ViewProfileComponent } from './profile/view-profile/view-profile.component';
 import { FormProfessionalComponent } from './profile/form-professional/form-professional.component';
 import { FormUniversityComponent } from './profile/form-university/form-university.component';
+import { EditModalComponent } from './profile/academic-qualification/Modal/edit-modal/edit-modal.component';
+import { DeleteModalComponent } from './profile/academic-qualification/Modal/delete-modal/delete-modal.component';
 
 const routes: Routes = [
   {
@@ -56,7 +58,9 @@ const routes: Routes = [
     ProfessionalMenberShipsComponent,
     ViewProfileComponent,
     FormProfessionalComponent,
-    FormUniversityComponent
+    FormUniversityComponent,
+    EditModalComponent,
+    DeleteModalComponent
   ],
   providers: [TrainingHistoryService]
 })

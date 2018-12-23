@@ -95,7 +95,7 @@ export class AcademicQualificationComponent implements OnInit {
   getExamTypes() {
     return this.examtypeService.viewExamtypes().subscribe(data => {
       this.examtypes = data;
-      this.academicObj.examTypeId = 0
+      this.academicObj.examType = 0
     })
   }
   previous() {
@@ -107,7 +107,7 @@ export class AcademicQualificationComponent implements OnInit {
   }
 
   clear() {
-    this.academicObj.examTypeId = null;
+    this.academicObj.examType = null;
     this.academicObj.periodYearTo = null;
     this.academicObj.periodYearFrom = null;
     this.academicObj.result = null;

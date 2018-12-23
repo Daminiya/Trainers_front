@@ -16,4 +16,16 @@ export class AcademicQualificationService {
   public addAcademicQualification(academicObj){
     return this.http.post<AcademicQualification>(this.acaQualurl,academicObj);
   }
+  getAcademicQualificationByUserId(uid){
+    return this.http.get<AcademicQualification[]>(this.acaQualurl+"/"+uid);
+  }
+  getAcademicQualification(){
+    return this.http.get<AcademicQualification[]>(this.acaQualurl);
+  }
+  updateAcademicQualification(data){
+    return this.http.put<AcademicQualification>(this.acaQualurl+"/edit/"+data.id,data);
+  }
+  deleteAcademicQualificationa(data){
+    return this.http.delete<AcademicQualification>(this.acaQualurl+"/"+data.id)
+  }
 }
