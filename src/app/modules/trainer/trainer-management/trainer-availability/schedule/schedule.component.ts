@@ -2,16 +2,16 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 
 @Component({
-  selector: 'app-availability',
-  templateUrl: './availability.component.html',
-  styleUrls: ['./availability.component.css']
+  selector: 'app-schedule',
+  templateUrl: './schedule.component.html',
+  styleUrls: ['./schedule.component.css']
 })
-export class AvailabilityComponent implements OnInit {
+export class ScheduleComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name','date','time','edit/delete'];
+  displayedColumns: string[] = ['id', 'name','startdate','enddate', 'starttime','endtime','topic','status'];
 
   availabilityDetails = [
-    { 'id':'1', 'name':'John', 'date' :'17.11.2018','time':'11.30AM', 'edit/delete':'' },
+    { 'id':'1', 'name':'Nisha', 'startdate' :'11.1.2018','enddate':'12.3.2018', 'starttime':'11.30AM','endtime':'12.21pm','topic':'work', 'status':'' },
   
     
   ]
@@ -38,5 +38,5 @@ export class AvailabilityComponent implements OnInit {
     }
   }
 
-}
 
+}

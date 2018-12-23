@@ -67,7 +67,7 @@ export class ViewProfessionalQualificationComponent implements OnInit {
   getEmpProQualification() {
     this.professionalQualificationService.getAllEmpProQualification().subscribe(data => {
       this.professional = data;
-      // this.dataSource = new MatTableDataSource<any>(this.professional);
+      // this.dataSource = new MatTableDataSource<any>(this.professional);zz
       // this.dataSource.paginator = this.paginator;
       // this.dataSource.sort = this.sort;
       console.log(data);

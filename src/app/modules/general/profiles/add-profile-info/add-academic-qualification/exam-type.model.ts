@@ -1,4 +1,4 @@
 export class ExamType {
-    id:Number;
+    id:number;
     examTypeName:String;
 }

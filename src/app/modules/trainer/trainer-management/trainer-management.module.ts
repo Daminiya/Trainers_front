@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TrainerManagementComponent } from './trainer-management.component';
 import { PaymentHistoryComponent } from './payment-history/payment-history.component';
-import { AvailabilityComponent } from './availability/availability.component';
-import { AvailabilityFormComponent } from './availability-form/availability-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
 import { TrainingHistoryService } from 'src/app/services/training-history/training-history.service';
@@ -17,6 +15,8 @@ import { ProfessionalMenberShipsComponent } from './profile/professional-menber-
 import { ViewProfileComponent } from './profile/view-profile/view-profile.component';
 import { FormProfessionalComponent } from './profile/form-professional/form-professional.component';
 import { FormUniversityComponent } from './profile/form-university/form-university.component';
+import { EditModalComponent } from './profile/academic-qualification/Modal/edit-modal/edit-modal.component';
+import { DeleteModalComponent } from './profile/academic-qualification/Modal/delete-modal/delete-modal.component';
 import { SuggestionAndFeedbackComponent } from './suggestion-and-feedback/suggestion-and-feedback.component';
 import { GeneralInformationComponent } from './profile/general-information/general-information.component';
 import { TechnologySkillLevelComponent } from './profile/technology-skill-level/technology-skill-level.component';
@@ -29,11 +29,17 @@ import { EditRecordOfEmploymentComponent } from './profile/record-of-employment/
 import { AddTechnologySkillLevelComponent } from './profile/technology-skill-level/add-technology-skill-level/add-technology-skill-level.component';
 import { EditTechnologySkillLevelComponent } from './profile/technology-skill-level/edit-technology-skill-level/edit-technology-skill-level.component';
 import { SuggestionService } from '../Service/suggestion.service';
+import { TrainerAvailabilityComponent } from './trainer-availability/trainer-availability.component';
+import { ViewAvailabilityComponent } from './trainer-availability/view-availability/view-availability.component';
+import { ScheduleComponent } from './trainer-availability/schedule/schedule.component';
+import { AddAvailabilityComponent } from './trainer-availability/add-availability/add-availability.component';
 import { TrainingHistoryComponent } from './training-history/training-history.component';
 import { AddPaymentHistoryComponent } from './payment-history/add-payment-history/add-payment-history.component';
 import { ViewPaymentHistoryComponent } from './payment-history/view-payment-history/view-payment-history.component';
 import { AddGeneralInformationComponent } from './profile/general-information/Modal/add-general-information/add-general-information.component';
 import { EditGeneralInformationComponent } from './profile/general-information/Modal/edit-general-information/edit-general-information.component';
+
+
 
 const routes: Routes = [
 
@@ -46,6 +52,11 @@ const routes: Routes = [
     component: SuggestionAndFeedbackComponent
   },
   {
+
+    path: 'trainer-availability',
+    component: TrainerAvailabilityComponent
+  },
+  {
     path: 'training-history',
     component: TrainingHistoryComponent
   },
@@ -53,6 +64,9 @@ const routes: Routes = [
     path: 'payment-history',
     component: PaymentHistoryComponent
   }
+  
+
+
 ];
 @NgModule({
   imports: [
@@ -64,9 +78,7 @@ const routes: Routes = [
   declarations: [
     TrainerManagementComponent,
     PaymentHistoryComponent,
-    AvailabilityComponent,
-    AvailabilityFormComponent,
-
+    TrainingHistoryComponent,
     ProfileComponent,
     AddAcademicQualificationComponent,
     AddProfessionalQualificationComponent,
@@ -76,6 +88,8 @@ const routes: Routes = [
     ViewProfileComponent,
     FormProfessionalComponent,
     FormUniversityComponent,
+    EditModalComponent,
+    DeleteModalComponent,
     SuggestionAndFeedbackComponent,
     GeneralInformationComponent,
     TechnologySkillLevelComponent,
@@ -87,11 +101,17 @@ const routes: Routes = [
     EditRecordOfEmploymentComponent,
     AddTechnologySkillLevelComponent,
     EditTechnologySkillLevelComponent,
+    TrainerAvailabilityComponent,
+    ViewAvailabilityComponent,
+    ScheduleComponent,
+    AddAvailabilityComponent,
     TrainingHistoryComponent,
     AddPaymentHistoryComponent,
     ViewPaymentHistoryComponent,
     AddGeneralInformationComponent,
-    EditGeneralInformationComponent
+    EditGeneralInformationComponent,
+    ViewPaymentHistoryComponent
+
   ],
   providers: [TrainingHistoryService, SuggestionService]
 })

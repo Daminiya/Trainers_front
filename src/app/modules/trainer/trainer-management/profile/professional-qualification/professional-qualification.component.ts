@@ -53,15 +53,15 @@ export class ProfessionalQualificationComponent implements OnInit {
   }
   profesionalObj=new ProfessionalQualification();
   editproQualification(){
-    this.profesionalObj.user=this.userId;
+    // this.profesionalObj.user=this.userId;
     return this.professionalQualificationService.editProQualification(this.profesionalObj).subscribe(data=>{
-      this.GetProfessionalQualificationByUserId(this.userId);
+      // this.GetProfessionalQualificationByUserId(this.userId);
       this.getTrainerProQualification();
     })
   }
   deleteproQualification(){
     return this.professionalQualificationService.deleteProQualification(this.profesionalObj).subscribe(data=>{
-      this.GetProfessionalQualificationByUserId(this.userId);
+      // this.GetProfessionalQualificationByUserId(this.userId);
       this.getTrainerProQualification();
     })
   }
