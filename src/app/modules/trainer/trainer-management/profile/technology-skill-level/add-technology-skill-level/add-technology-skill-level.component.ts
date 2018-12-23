@@ -17,8 +17,8 @@ export class AddTechnologySkillLevelComponent implements OnInit {
   ngOnInit() {
   }
   createTechnologySkillLevel() {
-       this.technology.createTechnologySkillLevel(this.technologySkillObj).subscribe(data => {
-        console.log(data);
-      });
-    }
+    this.technology.createTechnologySkillLevel(this.technologySkillObj).subscribe(data => {
+      console.log(data);
+    });
   }
+}

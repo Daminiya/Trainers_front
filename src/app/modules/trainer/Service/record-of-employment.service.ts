@@ -15,7 +15,7 @@ export class RecordOfEmploymentService {
   private recordOfEmploymenturl = "http://localhost:8080/hrm_system/recordOfEmployment";
 
   public getRecordOfEmployment(){
-    return this.httpObj.get<[RecordOfEmployment]>(this.recordOfEmploymenturl);
+    return this.httpObj.get<RecordOfEmployment[]>(this.recordOfEmploymenturl);
   }
   public createRecordOfEmployment(recordOfEmployment:RecordOfEmployment){
     return this.httpObj.post<RecordOfEmployment>(this.recordOfEmploymenturl,recordOfEmployment);

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-             
+
       <!-- card header start -->
       <div class="card-header">
         <h5 class="card-title"> Record of Employment</h5>
@@ -18,13 +18,13 @@
 
       <!-- card body start -->
       <div class="card-body">
-          <div class="col">
-            <div class="float-right">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addmodal">
-                   Add
-                </button>
-            </div>
-            </div>
+        <div class="col">
+          <div class="float-right">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addmodal">
+              Add
+            </button>
+          </div>
+        </div>
         <mat-form-field>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
         </mat-form-field>
@@ -34,44 +34,43 @@
 
             <!-- column 0 start -->
             <ng-container matColumnDef="id">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> ID</mat-header-cell>
-                <mat-cell *matCellDef="let recordOfEmployment "> {{recordOfEmployment.id}}</mat-cell>
-              </ng-container>
-              <!-- column 0 end -->
+              <mat-header-cell *matHeaderCellDef mat-sort-header> ID</mat-header-cell>
+              <mat-cell *matCellDef="let recordOfEmployment "> {{recordOfEmployment.id}}</mat-cell>
+            </ng-container>
+            <!-- column 0 end -->
 
             <!-- column 1 start -->
             <ng-container matColumnDef="from">
               <mat-header-cell *matHeaderCellDef mat-sort-header> From</mat-header-cell>
-              <mat-cell *matCellDef="let recordOfEmployment "> {{recordOfEmployment.from}}</mat-cell>
+              <mat-cell *matCellDef="let recordOfEmployment "> {{recordOfEmployment.fromYear}}</mat-cell>
             </ng-container>
             <!-- column 1 end -->
 
 
-             <!-- column 2 start -->
-             <ng-container matColumnDef="to">
+            <!-- column 2 start -->
+            <ng-container matColumnDef="to">
               <mat-header-cell *matHeaderCellDef mat-sort-header> To </mat-header-cell>
-              <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.to}} </mat-cell>
+              <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.toYear}} </mat-cell>
             </ng-container>
             <!-- column  2 end -->
 
-             <!-- column 3 start -->
-             <ng-container matColumnDef="period">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Period</mat-header-cell>
-                <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.period}} </mat-cell>
-              </ng-container>
-              <!-- column 3 end -->
+            <!-- column 3 start -->
+            <ng-container matColumnDef="period">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Period</mat-header-cell>
+              <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.period}} </mat-cell>
+            </ng-container>
+            <!-- column 3 end -->
 
-
-              <!-- column 4 start -->
+            <!-- column 4 start -->
             <ng-container matColumnDef="workPlaceName">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>  Work Place Name </mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Work Place Name </mat-header-cell>
               <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.workPlaceName}} </mat-cell>
             </ng-container>
             <!-- column 4 end -->
 
             <!-- column 5 start -->
             <ng-container matColumnDef="workPlaceAddres">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>  Work Place Address </mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Work Place Address </mat-header-cell>
               <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.workPlaceAddres}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
@@ -79,7 +78,7 @@
             <!-- column 1 start -->
             <ng-container matColumnDef="designation">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Designation </mat-header-cell>
-              <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.designation}} </mat-cell>
+              <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.position}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
 
@@ -90,15 +89,15 @@
             </ng-container>
             <!-- column 1 end -->
 
-             <!-- column 5 start -->
-             <ng-container matColumnDef="edit/delete">
+            <!-- column 5 start -->
+            <ng-container matColumnDef="edit/delete">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Edit/Delete </mat-header-cell>
-              <mat-cell *matCellDef="let recordOfEmployment"> 
+              <mat-cell *matCellDef="let recordOfEmployment">
                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updatemodal">
-                Edit
-              </button> &nbsp;&nbsp;
+                  Edit
+                </button> &nbsp;&nbsp;
                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deletemodal">
-                Delete
+                  Delete
                 </button>
               </mat-cell>
             </ng-container>
@@ -114,11 +113,7 @@
         </div>
       </div>
       <!-- card body end -->
-      
+
+    </div>
   </div>
 </div>
-</div>
-
-
-
- 

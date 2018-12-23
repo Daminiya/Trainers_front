@@ -11,22 +11,22 @@ export class TechnologySkillLevelComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'technology', 'skill', 'level', 'edit/delete'];
 
-  technologySkill = [
-    { 'id': '1', 'technology': 'Core Technology', 'skill': 'core Java', 'level': '3', 'edit/delete': '' },
-  ]
-  dataSource = new MatTableDataSource<any>(this.technologySkill);
+  
+  // dataSource = new MatTableDataSource<any>(this.technologySkill);
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  technologySkill: any[];
+  dataSource: MatTableDataSource<any>;
 
-  constructor(private generalInformationService: TechnologySkillLevelService) { }
+  constructor(private technologySkillLevelService: TechnologySkillLevelService) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.technologySkill);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    this.getGeneralInformation();
+    this.getTechnologySkillLevel();
   }
 
   // RenderDataTable() {  
@@ -37,8 +37,8 @@ export class TechnologySkillLevelComponent implements OnInit {
   //       this.MyDataSource.data = res;  
   //       console.log(this.MyDataSource.data); 
 
-  getGeneralInformation() {
-    return this.generalInformationService.getTechnologySkillLevel().subscribe(res => {
+  getTechnologySkillLevel() {
+    return this.technologySkillLevelService.getTechnologySkillLevel().subscribe(res => {
       this.dataSource=new MatTableDataSource();
       this.dataSource.data=res;
       console.log(this.dataSource.data);

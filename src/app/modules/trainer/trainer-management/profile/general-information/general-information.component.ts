@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { GeneralInformation } from '../../../Model/general-information';
 import { GeneralInformationService } from '../../../Service/general-information.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-general-information',
@@ -10,15 +11,54 @@ import { Router } from '@angular/router';
 })
 export class GeneralInformationComponent implements OnInit {
 
-  generalInfoObj: GeneralInformation = new GeneralInformation();
-  constructor(private router: Router,
-    private generalInfo: GeneralInformationService) { }
+  generalInformation:GeneralInformation[];
+  dataSource = new MatTableDataSource<any>(this.generalInformation);
+  displayedColumns: string[] = ['id','fullname','email','nationality','nic','religion','gender','dob','paddress','raddress','mnumber','tnumber','mstatus','position','sarea','edit/delete'];
+
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(private generalInformationService:GeneralInformationService) { }
 
   ngOnInit() {
+    this.getAllGeneralInfor();
+    this.dataSource = new MatTableDataSource<any>(this.generalInformation);
+   // this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
-  createGeneralInformation() {
-       this.generalInfo.createGeneralInformation(this.generalInfoObj).subscribe(data => {
-        console.log(data);
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+  getAllGeneralInfor(){
+    this.generalInformationService.getGenerelInformation().subscribe(data=>{
+      this.dataSource=new MatTableDataSource();
+      this.dataSource.data=data;
+      this.dataSource.paginator = this.paginator;
+      console.log(data);
+    })
+  }
+
+}
+
+
+
+
+
+
+  // generalInfoObj: GeneralInformation = new GeneralInformation();
+  // constructor(private router: Router,
+  //   private generalInfo: GeneralInformationService) { }
+
+  // ngOnInit() {
+  // }
+  // createGeneralInformation() {
+  //      this.generalInfo.createGeneralInformation(this.generalInfoObj).subscribe(data => {
+  //       console.log(data);
         
     //     // alert("added")
     //     this.next();
@@ -26,7 +66,7 @@ export class GeneralInformationComponent implements OnInit {
     //     this.responseMsgTimeOut();
   
   
-     });
+    //  });
     //   this.responseMsg = "fail";
     //   this.responseMsgTimeOut();
     // }
@@ -35,5 +75,5 @@ export class GeneralInformationComponent implements OnInit {
     //   this.router.navigate(['/appointment/appointmentInformation/academicInfo']);
     
   
-  }
-  }
+  // }
+  // }

@@ -12,13 +12,13 @@ export class AddRecordOfEmploymentComponent implements OnInit {
 
   recordOfEmployObj: RecordOfEmployment = new RecordOfEmployment();
   constructor(private router: Router,
-    private technology: RecordOfEmploymentService) { }
+    private recordemploy: RecordOfEmploymentService) { }
 
   ngOnInit() {
   }
-  createTechnologySkillLevel() {
-       this.technology.createRecordOfEmployment(this.recordOfEmployObj).subscribe(data => {
-        console.log(data);
-      });
-    }
+  createRecordOfEmployment() {
+    this.recordemploy.createRecordOfEmployment(this.recordOfEmployObj).subscribe(data => {
+      console.log(data);
+    });
   }
+}

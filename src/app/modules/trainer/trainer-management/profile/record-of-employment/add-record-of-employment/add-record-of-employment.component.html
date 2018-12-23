@@ -27,14 +27,14 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="start-date"> From Year</label>
-                  <input type="date" class="form-control" id="id" name="from" placeholder="dd/mm/yyyy" [(ngModel)]="recordOfEmployObj.from">
+                  <input type="date" class="form-control" id="id" name="from" placeholder="dd/mm/yyyy" [(ngModel)]="recordOfEmployObj.fromYear">
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="start-date"> To Year</label>
-                  <input type="date" class="form-control" id="to" name="to" placeholder="dd/mm/yyyy" [(ngModel)]="recordOfEmployObj.to">
+                  <input type="date" class="form-control" id="to" name="to" placeholder="dd/mm/yyyy" [(ngModel)]="recordOfEmployObj.toYear">
                 </div>
               </div>
               <!-- </div> -->
@@ -49,28 +49,32 @@
               <div>
                 <div class="form-group">
                   <label for="end-date"> Work Place Name</label>
-                  <input type="text" class="form-control" id="workPlaceName" name="workPlaceName" placeholder="Enter the work Place Name" [(ngModel)]="recordOfEmployObj.workPlaceName">
+                  <input type="text" class="form-control" id="workPlaceName" name="workPlaceName" placeholder="Enter the work Place Name"
+                    [(ngModel)]="recordOfEmployObj.workPlaceName">
                 </div>
               </div>
 
               <div>
                 <div class="form-group">
                   <label for="address">Work Place Addres</label>
-                  <input type="text" class="form-control" id="address" name="address" placeholder="Enthe the work place Address" [(ngModel)]="recordOfEmployObj.workPlaceAddres">
+                  <input type="text" class="form-control" id="address" name="address" placeholder="Enthe the work place Address"
+                    [(ngModel)]="recordOfEmployObj.workPlaceAddress">
                 </div>
               </div>
 
               <div>
                 <div class="form-group">
-                  <label for="designation"> Designation</label>
-                  <input type="text" class="form-control" id="designation" name="designation" placeholder="Enthe the Designation" [(ngModel)]="recordOfEmployObj.designation">
+                  <label for="designation"> Position</label>
+                  <input type="text" class="form-control" id="designation" name="designation" placeholder="Enthe the Designation"
+                    [(ngModel)]="recordOfEmployObj.position">
                 </div>
               </div>
 
               <div>
                 <div class="form-group">
                   <label for="workType">Type of Work</label>
-                  <input type="text" class="form-control" id="workType" name="workType" placeholder="Enthe the work type" [(ngModel)]="recordOfEmployObj.typeOfWork">
+                  <input type="text" class="form-control" id="workType" name="workType" placeholder="Enthe the work type"
+                    [(ngModel)]="recordOfEmployObj.typeOfWork">
                 </div>
               </div>
 

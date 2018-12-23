@@ -32,6 +32,8 @@ import { SuggestionService } from '../Service/suggestion.service';
 import { TrainingHistoryComponent } from './training-history/training-history.component';
 import { AddPaymentHistoryComponent } from './payment-history/add-payment-history/add-payment-history.component';
 import { ViewPaymentHistoryComponent } from './payment-history/view-payment-history/view-payment-history.component';
+import { AddGeneralInformationComponent } from './profile/general-information/Modal/add-general-information/add-general-information.component';
+import { EditGeneralInformationComponent } from './profile/general-information/Modal/edit-general-information/edit-general-information.component';
 
 const routes: Routes = [
 
@@ -87,7 +89,9 @@ const routes: Routes = [
     EditTechnologySkillLevelComponent,
     TrainingHistoryComponent,
     AddPaymentHistoryComponent,
-    ViewPaymentHistoryComponent
+    ViewPaymentHistoryComponent,
+    AddGeneralInformationComponent,
+    EditGeneralInformationComponent
   ],
   providers: [TrainingHistoryService, SuggestionService]
 })
