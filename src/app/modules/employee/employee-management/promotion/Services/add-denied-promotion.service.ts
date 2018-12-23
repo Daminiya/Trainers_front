@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { AddDeniedPromotion } from '../models/add-denied-promotion';
 import { LoginCredential } from '../../../remuneration/Model/login-credential';
+import { Availability } from 'src/app/modules/trainer/Model/availability';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})

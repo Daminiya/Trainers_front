@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TrainerManagementComponent } from './trainer-management.component';
 import { PaymentHistoryComponent } from './payment-history/payment-history.component';
-import { AvailabilityComponent } from './availability/availability.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
-import { AvailabilityFormComponent } from './availability-form/availability-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
 import { TrainingHistoryComponent } from './training-history/training-history.component';
@@ -33,6 +31,10 @@ import { EditRecordOfEmploymentComponent } from './profile/record-of-employment/
 import { AddTechnologySkillLevelComponent } from './profile/technology-skill-level/add-technology-skill-level/add-technology-skill-level.component';
 import { EditTechnologySkillLevelComponent } from './profile/technology-skill-level/edit-technology-skill-level/edit-technology-skill-level.component';
 import { SuggestionService } from '../Service/suggestion.service';
+import { TrainerAvailabilityComponent } from './trainer-availability/trainer-availability.component';
+import { ViewAvailabilityComponent } from './trainer-availability/view-availability/view-availability.component';
+import { ScheduleComponent } from './trainer-availability/schedule/schedule.component';
+import { AddAvailabilityComponent } from './trainer-availability/add-availability/add-availability.component';
 
 const routes: Routes = [
   {
@@ -46,7 +48,14 @@ const routes: Routes = [
   {
     path: 'suggestion',
     component: SuggestionAndFeedbackComponent
+  },
+  {
+    path: 'trainer-availability',
+    component: TrainerAvailabilityComponent
   }
+  
+
+
 ];
 @NgModule({
   imports: [
@@ -58,9 +67,8 @@ const routes: Routes = [
   declarations: [
     TrainerManagementComponent,
     PaymentHistoryComponent,
-    AvailabilityComponent,
+    
     PaymentFormComponent,
-    AvailabilityFormComponent,
     TrainingHistoryComponent,
     ViewTrainingHistoryComponent,
     AddTrainingHistoryComponent,
@@ -83,7 +91,11 @@ const routes: Routes = [
     AddRecordOfEmploymentComponent,
     EditRecordOfEmploymentComponent,
     AddTechnologySkillLevelComponent,
-    EditTechnologySkillLevelComponent
+    EditTechnologySkillLevelComponent,
+    TrainerAvailabilityComponent,
+    ViewAvailabilityComponent,
+    ScheduleComponent,
+    AddAvailabilityComponent
   ],
   providers: [TrainingHistoryService,SuggestionService]
 })
