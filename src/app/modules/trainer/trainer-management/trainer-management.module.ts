@@ -7,9 +7,6 @@ import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { AvailabilityFormComponent } from './availability-form/availability-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
-import { TrainingHistoryComponent } from './training-history/training-history.component';
-import { ViewTrainingHistoryComponent } from './training-history/view-training-history/view-training-history.component';
-import { AddTrainingHistoryComponent } from './training-history/add-training-history/add-training-history.component';
 import { TrainingHistoryService } from 'src/app/services/training-history/training-history.service';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
@@ -33,12 +30,10 @@ import { EditRecordOfEmploymentComponent } from './profile/record-of-employment/
 import { AddTechnologySkillLevelComponent } from './profile/technology-skill-level/add-technology-skill-level/add-technology-skill-level.component';
 import { EditTechnologySkillLevelComponent } from './profile/technology-skill-level/edit-technology-skill-level/edit-technology-skill-level.component';
 import { SuggestionService } from '../Service/suggestion.service';
+import { TrainingHistoryComponent } from './training-history/training-history.component';
 
 const routes: Routes = [
-  {
-    path: 'training-history',
-    component: TrainingHistoryComponent
-  },
+ 
   {
     path: 'profile',
     component: ProfileComponent
@@ -46,6 +41,10 @@ const routes: Routes = [
   {
     path: 'suggestion',
     component: SuggestionAndFeedbackComponent
+  },
+  {
+    path: 'training-history',
+    component: TrainingHistoryComponent
   }
 ];
 @NgModule({
@@ -61,9 +60,7 @@ const routes: Routes = [
     AvailabilityComponent,
     PaymentFormComponent,
     AvailabilityFormComponent,
-    TrainingHistoryComponent,
-    ViewTrainingHistoryComponent,
-    AddTrainingHistoryComponent,
+   
     ProfileComponent,
     AddAcademicQualificationComponent,
     AddProfessionalQualificationComponent,
@@ -83,7 +80,8 @@ const routes: Routes = [
     AddRecordOfEmploymentComponent,
     EditRecordOfEmploymentComponent,
     AddTechnologySkillLevelComponent,
-    EditTechnologySkillLevelComponent
+    EditTechnologySkillLevelComponent,
+    TrainingHistoryComponent
   ],
   providers: [TrainingHistoryService,SuggestionService]
 })
