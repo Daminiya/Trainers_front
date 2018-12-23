@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TrainerManagementComponent } from './trainer-management.component';
 import { PaymentHistoryComponent } from './payment-history/payment-history.component';
 import { AvailabilityComponent } from './availability/availability.component';
-import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { AvailabilityFormComponent } from './availability-form/availability-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
@@ -31,9 +30,11 @@ import { AddTechnologySkillLevelComponent } from './profile/technology-skill-lev
 import { EditTechnologySkillLevelComponent } from './profile/technology-skill-level/edit-technology-skill-level/edit-technology-skill-level.component';
 import { SuggestionService } from '../Service/suggestion.service';
 import { TrainingHistoryComponent } from './training-history/training-history.component';
+import { AddPaymentHistoryComponent } from './payment-history/add-payment-history/add-payment-history.component';
+import { ViewPaymentHistoryComponent } from './payment-history/view-payment-history/view-payment-history.component';
 
 const routes: Routes = [
- 
+
   {
     path: 'profile',
     component: ProfileComponent
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: 'training-history',
     component: TrainingHistoryComponent
+  },
+  {
+    path: 'payment-history',
+    component: PaymentHistoryComponent
   }
 ];
 @NgModule({
@@ -58,9 +63,8 @@ const routes: Routes = [
     TrainerManagementComponent,
     PaymentHistoryComponent,
     AvailabilityComponent,
-    PaymentFormComponent,
     AvailabilityFormComponent,
-   
+
     ProfileComponent,
     AddAcademicQualificationComponent,
     AddProfessionalQualificationComponent,
@@ -81,8 +85,10 @@ const routes: Routes = [
     EditRecordOfEmploymentComponent,
     AddTechnologySkillLevelComponent,
     EditTechnologySkillLevelComponent,
-    TrainingHistoryComponent
+    TrainingHistoryComponent,
+    AddPaymentHistoryComponent,
+    ViewPaymentHistoryComponent
   ],
-  providers: [TrainingHistoryService,SuggestionService]
+  providers: [TrainingHistoryService, SuggestionService]
 })
 export class TrainerManagementModule { }
