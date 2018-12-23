@@ -1,4 +1,4 @@
-<!-- edit modal start -->
+<!-- add modal start -->
 <div class="modal fade" id="addmodal">
   <div class="modal-dialog">
     <!-- modal content start -->
@@ -15,26 +15,26 @@
 
             <!-- card body start -->
 
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <div class="form-group">
                 <label for="id"> ID</label>
                 <input type="text" class="form-control" id="id" name="from" placeholder="Record of Employment ID"
                   disabled>
               </div>
-            </div>
+            </div> -->
 
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="start-date"> From Year</label>
-                  <input type="date" class="form-control" id="id" name="from" placeholder="dd/mm/yyyy">
+                  <input type="date" class="form-control" id="id" name="from" placeholder="dd/mm/yyyy" [(ngModel)]="recordOfEmployObj.from">
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="start-date"> To Year</label>
-                  <input type="date" class="form-control" id="to" name="to" placeholder="dd/mm/yyyy">
+                  <input type="date" class="form-control" id="to" name="to" placeholder="dd/mm/yyyy" [(ngModel)]="recordOfEmployObj.to">
                 </div>
               </div>
               <!-- </div> -->
@@ -42,35 +42,35 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="leave-type">Period </label>
-                  <input class="form-control" id="period" name="period" placeholder="Enthe the Period">
+                  <input class="form-control" id="period" name="period" placeholder="Enthe the Period" [(ngModel)]="recordOfEmployObj.period">
                 </div>
               </div>
 
               <div>
                 <div class="form-group">
                   <label for="end-date"> Work Place Name</label>
-                  <input type="text" class="form-control" id="workPlaceName" name="workPlaceName" placeholder="Enter the work Place Name">
+                  <input type="text" class="form-control" id="workPlaceName" name="workPlaceName" placeholder="Enter the work Place Name" [(ngModel)]="recordOfEmployObj.workPlaceName">
                 </div>
               </div>
 
               <div>
                 <div class="form-group">
                   <label for="address">Work Place Addres</label>
-                  <input type="text" class="form-control" id="address" name="address" placeholder="Enthe the work place Address">
+                  <input type="text" class="form-control" id="address" name="address" placeholder="Enthe the work place Address" [(ngModel)]="recordOfEmployObj.workPlaceAddres">
                 </div>
               </div>
 
               <div>
                 <div class="form-group">
                   <label for="designation"> Designation</label>
-                  <input type="text" class="form-control" id="designation" name="designation" placeholder="Enthe the Designation">
+                  <input type="text" class="form-control" id="designation" name="designation" placeholder="Enthe the Designation" [(ngModel)]="recordOfEmployObj.designation">
                 </div>
               </div>
 
               <div>
                 <div class="form-group">
                   <label for="workType">Type of Work</label>
-                  <input type="text" class="form-control" id="workType" name="workType" placeholder="Enthe the work type">
+                  <input type="text" class="form-control" id="workType" name="workType" placeholder="Enthe the work type" [(ngModel)]="recordOfEmployObj.typeOfWork">
                 </div>
               </div>
 
@@ -80,7 +80,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal"> Add</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createRecordOfEmployment()"> Add</button>
       </div>
     </div>
   </div>
@@ -88,4 +88,4 @@
 </div>
 <!-- modal content end -->
 
-<!-- edit modal end -->
+<!-- add modal end -->

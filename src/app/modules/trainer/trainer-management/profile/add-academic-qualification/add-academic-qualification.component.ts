@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ExamType } from 'src/app/modules/general/profiles/add-profile-info/add-academic-qualification/exam-type.model';
-import { Profile } from 'src/app/modules/general/profiles/view-profile-info/profile-table/profile.model';
-import { AcademicQualification } from 'src/app/modules/general/profiles/add-profile-info/add-academic-qualification/academic-qualification.model';
 import { ExamTypeService } from 'src/app/modules/general/profiles/add-profile-info/add-academic-qualification/exam-type.service';
-import { AcademicQualificationService } from 'src/app/modules/general/profiles/add-profile-info/add-academic-qualification/academic-qualification.service';
-import { ProfileInfoService } from 'src/app/modules/general/profiles/view-profile-info/profile-table/profile-info.service';
 import { Router } from '@angular/router';
+import { Profile } from 'src/app/modules/general/profiles/view-profile-info/profile-table/profile.model';
+import { ProfileInfoService } from 'src/app/modules/general/profiles/view-profile-info/profile-table/profile-info.service';
+import { AcademicQualificationService } from 'src/app/modules/general/profiles/add-profile-info/add-academic-qualification/academic-qualification.service';
+import { AcademicQualification } from 'src/app/modules/general/profiles/add-profile-info/add-academic-qualification/academic-qualification.model';
 
 @Component({
   selector: 'app-add-academic-qualification',
@@ -99,7 +99,7 @@ export class AddAcademicQualificationComponent implements OnInit {
   getExamTypes() {
     return this.examtypeService.viewExamtypes().subscribe(data => {
       this.examtypes = data;
-      this.trainerAcademicObj.examTypeId = 0
+      this.trainerAcademicObj.examType = 0
     })
   }
   // previous() {
@@ -111,7 +111,7 @@ export class AddAcademicQualificationComponent implements OnInit {
   // }
 
   clear() {
-    this.trainerAcademicObj.examTypeId = null;
+    this.trainerAcademicObj.examType = null;
     this.trainerAcademicObj.periodYearTo = null;
     this.trainerAcademicObj.periodYearFrom = null;
     this.trainerAcademicObj.result = null;

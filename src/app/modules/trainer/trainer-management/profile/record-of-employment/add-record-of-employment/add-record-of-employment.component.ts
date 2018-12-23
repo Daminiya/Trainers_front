@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RecordOfEmployment } from 'src/app/modules/trainer/Model/record-of-employment';
+import { RecordOfEmploymentService } from 'src/app/modules/trainer/Service/record-of-employment.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-record-of-employment',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddRecordOfEmploymentComponent implements OnInit {
 
-  constructor() { }
+  recordOfEmployObj: RecordOfEmployment = new RecordOfEmployment();
+  constructor(private router: Router,
+    private technology: RecordOfEmploymentService) { }
 
   ngOnInit() {
   }
-
-}
+  createTechnologySkillLevel() {
+       this.technology.createRecordOfEmployment(this.recordOfEmployObj).subscribe(data => {
+        console.log(data);
+      });
+    }
+  }

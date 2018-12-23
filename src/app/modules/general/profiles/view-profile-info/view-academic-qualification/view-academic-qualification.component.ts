@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
-import { AccademicQualificationService } from './accademic-qualification.service';
+ import { AccademicQualificationService } from './accademic-qualification.service';
 import { AcademicQualification } from './academic-qualification';
 import { ProfileInfoService } from '../profile-table/profile-info.service';
 import { ExamTypeService } from '../../add-profile-info/add-academic-qualification/exam-type.service';
