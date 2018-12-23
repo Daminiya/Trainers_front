@@ -10,13 +10,14 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class RecordOfEmploymentService {
+
   constructor(private httpObj:HttpClient) { }
   private recordOfEmploymenturl = "http://localhost:8080/hrm_system/recordOfEmployment";
 
   public getRecordOfEmployment(){
     return this.httpObj.get<[RecordOfEmployment]>(this.recordOfEmploymenturl);
   }
-  public createRecordOfEmployment(data){
-    return this.httpObj.post<RecordOfEmployment>(this.recordOfEmploymenturl,data);
+  public createRecordOfEmployment(recordOfEmployment:RecordOfEmployment){
+    return this.httpObj.post<RecordOfEmployment>(this.recordOfEmploymenturl,recordOfEmployment);
   }
 }
