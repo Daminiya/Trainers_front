@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Availability } from '../Model/availability';
 
+
+
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
@@ -9,6 +11,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AvailabilityService {
+
+  
   constructor(private httpObj:HttpClient) { }
   private AvailabilityUrl="http://localhost:8080/hrm_system/available";
   
@@ -18,16 +22,20 @@ export class AvailabilityService {
   }
 
   createAvailability(data){
-    return this.httpObj.post<Availability[]>(this.AvailabilityUrl, data);
+    return this.httpObj.post<Availability>(this.AvailabilityUrl,data);
   }
 
-  updateAvailability(data){
-    return this.httpObj.put<Availability[]>(this.AvailabilityUrl + "/"+ data.id,data);
+  deleteAvailability(availability){
+    return this.httpObj.delete<Availability>(this.AvailabilityUrl+"/"+availability.id,availability);
   }
 
-  deleteAvailability(data){
-    return this.httpObj.delete<Availability>(this.AvailabilityUrl + "/" + data.id);
+  updateAvailability(availability){
+    return this.httpObj.put<Availability>(this.AvailabilityUrl+"/"+availability.id,availability);
   }
+
+   
+
+ 
  
 
 }

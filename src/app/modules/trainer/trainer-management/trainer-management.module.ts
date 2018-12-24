@@ -63,6 +63,10 @@ const routes: Routes = [
   {
     path: 'payment-history',
     component: PaymentHistoryComponent
+  },
+  {
+    path: 'availability',
+    component: TrainerAvailabilityComponent
   }
   
 

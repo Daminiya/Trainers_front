@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { Availability } from 'src/app/modules/trainer/Model/availability';
+import { AvailabilityService } from 'src/app/modules/trainer/Service/availability.service';
 
 @Component({
   selector: 'app-schedule',
@@ -7,27 +9,26 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
+  AvailabilityObj: Availability = new Availability();
+  availability: any;
 
-  displayedColumns: string[] = ['id', 'name','startdate','enddate', 'starttime','endtime','topic','status'];
+  displayedColumns: string[] = ['id', 'name','startdate','enddate', 'starttime','topic','status'];
 
-  availabilityDetails = [
-    { 'id':'1', 'name':'Nisha', 'startdate' :'11.1.2018','enddate':'12.3.2018', 'starttime':'11.30AM','endtime':'12.21pm','topic':'work', 'status':'' },
   
-    
-  ]
-  dataSource = new MatTableDataSource<any>(this.availabilityDetails);
+  dataSource = new MatTableDataSource<any>(this.availability);
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   
 
-  constructor() { }
+  constructor(private availabilityService: AvailabilityService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.availabilityDetails);
+    this.dataSource = new MatTableDataSource<any>();
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.getAllAvailability();
   }
 
   applyFilter(filterValue: string) {
@@ -37,6 +38,18 @@ export class ScheduleComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  getAllAvailability() {
+    this.availabilityService.getAllAvailability().subscribe(data => {
+      this.availability = data;
+      this.dataSource = new MatTableDataSource<any>(this.availability);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      //  console.log(data);
+    });
+  }
+
+
 
 
 }
