@@ -46,35 +46,35 @@
             <!-- column 1 start -->
             <ng-container matColumnDef="name">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Name of trainer</mat-header-cell>
-              <mat-cell *matCellDef="let availabilityDetails"> {{availabilityDetails.name}} </mat-cell>
+              <mat-cell *matCellDef="let availabilityDetails"> {{availabilityDetails.trainerName}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
 
             <!-- column 2 start -->
             <ng-container matColumnDef="startdate">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</mat-header-cell>
-              <mat-cell *matCellDef="let availabilityDetails "> {{availabilityDetails.startdate}}</mat-cell>
+              <mat-cell *matCellDef="let availabilityDetails "> {{availabilityDetails.startDate}}</mat-cell>
             </ng-container>
             <!-- column 2 end -->
 
             <!-- column 2 start -->
             <ng-container matColumnDef="enddate">
               <mat-header-cell *matHeaderCellDef mat-sort-header>End Date</mat-header-cell>
-              <mat-cell *matCellDef="let availabilityDetails "> {{availabilityDetails.enddate}}</mat-cell>
+              <mat-cell *matCellDef="let availabilityDetails "> {{availabilityDetails.endDate}}</mat-cell>
             </ng-container>
             <!-- column 2 end -->
 
             <!-- column 3 start -->
             <ng-container matColumnDef="starttime">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Start time </mat-header-cell>
-              <mat-cell *matCellDef="let availabilityDetails"> {{availabilityDetails.starttime}} </mat-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Time </mat-header-cell>
+              <mat-cell *matCellDef="let availabilityDetails"> {{availabilityDetails.time}} </mat-cell>
             </ng-container>
             <!-- column 3 end -->
 
             <!-- column 3 start -->
             <ng-container matColumnDef="endtime">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> End time </mat-header-cell>
-              <mat-cell *matCellDef="let availabilityDetails"> {{availabilityDetails.endtime}} </mat-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Shedule Topic </mat-header-cell>
+              <mat-cell *matCellDef="let availabilityDetails"> {{availabilityDetails.scheduledTopic}} </mat-cell>
             </ng-container>
             <!-- column 3 end -->
 
@@ -92,10 +92,10 @@
               <mat-header-cell *matHeaderCellDef mat-sort-header> Edit/Delete </mat-header-cell>
 
               <mat-cell *matCellDef="let availabilityDetails">
-                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" (click)="editAvailability(availabilityDetails)" >
                   Edit
                 </button> &nbsp;&nbsp;
-                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal1">
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal1" (click)="editAvailability(availabilityDetails)" >
                   Delete
                 </button>
               </mat-cell>
@@ -139,14 +139,16 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="tranier-id"> ID</label>
-              <input type="email" class="form-control" id="tranier-id" name="id" placeholder=" ID">
+              <input type="email" class="form-control" id="tranier-id" name="id" placeholder=" ID" disabled
+              [(ngModel)]="AvailabilityObj.id">
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
               <label for="tranier-name"> Name of the trainer </label>
-              <input type="text" class="form-control" id="tranier-name" name="name" placeholder="Enter Trainer name">
+              <input type="text" class="form-control" id="tranier-name" name="name" placeholder="Enter Trainer name"
+              [(ngModel)]="AvailabilityObj.trainerName">
             </div>
           </div>
         </div>
@@ -154,14 +156,16 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="start-date"> Start Date </label>
-              <input type="date" class="form-control" id="start-date" name="start-date" placeholder="Enter start date">
+              <input type="date" class="form-control" id="start-date" name="start-date" placeholder="Enter start date"
+              [(ngModel)]="AvailabilityObj.startDate">
             </div>
           </div>
           <!-- &nbsp; &nbsp; -->
           <div class="col-md-6">
             <div class="form-group">
               <label for="end-date"> End Date </label>
-              <input type="date" class="form-control" id="end-date" name="end-date" placeholder="Enter end date">
+              <input type="date" class="form-control" id="end-date" name="end-date" placeholder="Enter end date"
+              [(ngModel)]="AvailabilityObj.endDate">
             </div>
           </div>
         </div>
@@ -170,17 +174,20 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="start-time"> Start Time</label>
-              <input type="time" class="form-control" id="start-time" name="start-time" placeholder="Enter start time">
+              <input type="time" class="form-control" id="start-time" name="start-time" placeholder="Enter start time"
+              [(ngModel)]="AvailabilityObj.startTime">
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
-              <label for="end-time"> End Time</label>
-              <input type="time" class="form-control" id="end-time" name="end-time" placeholder="Enter end time">
+              <label for="end-time"> Schedule Topic</label>
+              <input type="text" class="form-control" id="schedule-topic" name="schedule-topic" placeholder="Schedule topic time"
+              [(ngModel)]="AvailabilityObj.scheduledTopic">
             </div>
           </div>
         </div>
+        
       </form>
 
 
@@ -191,8 +198,8 @@
       </div> -->
       <div class="col-md-12">
         <div class="float-right">
-          <button type="submit" class="btn btn-primary">update</button>
-          <button type="submit" class="btn btn-primary">cancel</button>
+          <button type="submit" class="btn btn-primary" (click)="updateAvailability()"  data-dismiss="modal">update</button>
+          <button type="submit" class="btn btn-primary"  data-dismiss="modal">cancel</button>
         </div>
       </div>
 
@@ -220,7 +227,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteAvailability()">Delete</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
       </div>
 
