@@ -1,4 +1,4 @@
-<!-- add modal start -->
+<!-- edit modal start -->
 <div class="modal fade" id="updatemodal2">
   <div class="modal-dialog">
     <!-- modal content start -->
@@ -16,18 +16,17 @@
             <!-- card body start -->
 
             <!-- <div class="col-md-">
-                <div class="form-group">
-                  <label for="id">Trainer ID</label>
-                  <input type="text" class="form-control" name="id" id="id" placeholder="Enter the Trainer ID"
-                    [(ngModel)]="generalInfoObj.id">
-                </div>
-              </div> -->
+              <div class="form-group">
+                <label for="id">Trainer ID</label>
+                <input type="text" class="form-control" name="id" id="id" placeholder="Enter the Trainer ID"
+                  [(ngModel)]="generalInfoObj.id">
+              </div>
+            </div> -->
 
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="inputtrainerName"> Trainer Name</label>
-                <input type="text" id="name" name="name " placeholder="Enter Employee name" class="form-control"
-                  [(ngModel)]="generalInfoObj.fullName">
+                <input type="text" id="name" name="name " placeholder="Enter Employee name" class="form-control"[(ngModel)]="generalInfoObj.fullname">
               </div>
 
               <div class="col-md-6">
@@ -162,13 +161,13 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateGeneralWelfare()">Update</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createTechnologySkillLevel()">
+          Update</button>
       </div>
     </div>
   </div>
 </div>
-
-<!-- edit modal end -->
+<!-- edit model end -->
 
 <!-- delete model -->
 
