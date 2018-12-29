@@ -12,7 +12,7 @@ export class ScheduleComponent implements OnInit {
   AvailabilityObj: Availability = new Availability();
   availability: any;
 
-  displayedColumns: string[] = ['id', 'name','startdate','enddate', 'starttime','topic','status'];
+  displayedColumns: string[] = ['id', 'name','startdate','enddate', 'starttime','topic'];
 
   
   dataSource = new MatTableDataSource<any>(this.availability);

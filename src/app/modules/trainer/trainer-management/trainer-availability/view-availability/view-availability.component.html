@@ -78,13 +78,7 @@
             </ng-container>
             <!-- column 3 end -->
 
-            <!-- column 3 start -->
-            <ng-container matColumnDef="status">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
-              <mat-cell *matCellDef="let availabilityDetails"> {{availabilityDetails.status}} </mat-cell>
-            </ng-container>
-            <!-- column 3 end -->
-
+            
 
 
             <!-- column 4 start -->
@@ -175,14 +169,14 @@
             <div class="form-group">
               <label for="start-time"> Start Time</label>
               <input type="time" class="form-control" id="start-time" name="start-time" placeholder="Enter start time"
-              [(ngModel)]="AvailabilityObj.startTime">
+              [(ngModel)]="AvailabilityObj.time">
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
               <label for="end-time"> Schedule Topic</label>
-              <input type="text" class="form-control" id="schedule-topic" name="schedule-topic" placeholder="Schedule topic time"
+              <input type="text" class="form-control" id="schedule-topic" name="schedule-topic" placeholder="Enter Schedule topic "
               [(ngModel)]="AvailabilityObj.scheduledTopic">
             </div>
           </div>
